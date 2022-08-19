@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/teach-pui-example-react/solution-hw2/build/static/css/main.073c9b0a.css",
+    "main.js": "/teach-pui-example-react/solution-hw2/build/static/js/main.5e886ae8.js",
+    "index.html": "/teach-pui-example-react/solution-hw2/build/index.html",
+    "main.073c9b0a.css.map": "/teach-pui-example-react/solution-hw2/build/static/css/main.073c9b0a.css.map",
+    "main.5e886ae8.js.map": "/teach-pui-example-react/solution-hw2/build/static/js/main.5e886ae8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.5e886ae8.js"
+  ]
+}
