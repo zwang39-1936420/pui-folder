@@ -1,8 +1,8 @@
 {
-  "name": "solution-react",
+  "name": "solution-hw1",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://interactive-structures.github.io/teach-pui-example-react/solution-hw2",
+  "homepage": "https://interactive-structures.github.io/teach-pui-example-react/solution-hw1",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
