@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Shopping Website</title>
-    <!-- Include your CSS stylesheet here -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,10 +12,11 @@
       <img id="logo" src="../assets/logo/logo-01.svg" alt="Product 1">
       <div>
         <nav>
-          <!-- Add navigation links here -->
           <ul>
-              <li><a href="#">Cart</a></li>
-              <li id = "products-navbar"><a href="#">Products</a></li>
+              <!-- For now I used h2 tag for different nav list items-->
+              <!-- Need to change back to <a href = "#"></a> in the future HW-->
+              <li><p>Cart</p></li>
+              <li id = "products-navbar"><h2>Products</h2></li>
           </ul>
         </nav>
         
@@ -32,8 +32,8 @@
         <!-- Product listing -->
         <div class = "row">
           <section class="product">
-              <img src="../assets/products/apple-cinnamon-roll.jpg" alt="Product 1">
-              <h2>Product Name 1</h2>
+              <img src="../assets/products/original-cinnamon-roll.jpg" alt="Product 1">
+              <h2>Original Cinnamon Roll</h2>
               <section class = "descriptions">
                 <section class = "left-sec">
                   <p>Glazing:</p>
@@ -42,7 +42,8 @@
                 <section class = "right-sec">
                   <div class="dropdown">
                     <button class="dropbtn">
-                      <span>Keep original</span><span class="dropdown-icon">&#9660;</span>
+                      <!-- ChatGPT helped generating the dropdown-icon -->
+                      <span>Keep original</span><span class="dropdown-icon">&#9660;</span> 
                     </button>
                     <div class="dropdown-content">
                         <a>Keep original</a>
@@ -60,7 +61,7 @@
 
                 <section class = "right-sec">
                   <div class = "size">
-                    <button>1</button>
+                    <button class = "first">1</button>
                     <button>3</button>
                     <button>6</button>
                     <button>12</button>
@@ -80,7 +81,7 @@
           </section>
 
           <section class="product">
-            <img src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="Product 1">
+            <img src="../assets/products/apple-cinnamon-roll.jpg" alt="Product 1">
             <h2>Apple Cinnamon Roll</h2>
             <section class = "descriptions">
               <section class = "left-sec">
@@ -108,7 +109,7 @@
 
               <section class = "right-sec">
                 <div class = "size">
-                  <button>1</button>
+                  <button class = "first">1</button>
                   <button>3</button>
                   <button>6</button>
                   <button>12</button>
@@ -128,7 +129,105 @@
           </section>
 
           <section class="product">
-            <img src="../assets/products/gluten-free-cinnamon-roll.jpg" alt="Product 1">
+            <img src="../assets/products/raisin-cinnamon-roll.jpg" alt="Product 1">
+            <h2>Raisin Cinnamon Roll</h2>
+            <section class = "descriptions">
+              <section class = "left-sec">
+                <p>Glazing:</p>
+              </section>
+
+              <section class = "right-sec">
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    <span>Keep original</span><span class="dropdown-icon">&#9660;</span>
+                  </button>
+                  <div class="dropdown-content">
+                      <a>Keep original</a>
+                      <a>Sugar milk</a>
+                      <a>Vanilla milk</a>
+                      <a>Double chocolate</a>
+                  </div>
+              </section>
+            </section>
+
+            <section class = "descriptions">
+              <section class = "left-sec">
+                <p>Pack size:</p>
+              </section>
+
+              <section class = "right-sec">
+                <div class = "size">
+                  <button class = "first">1</button>
+                  <button>3</button>
+                  <button>6</button>
+                  <button>12</button>
+                </div>
+              </section>
+            </section>
+
+            <section class = "add-to-cart">
+              <section class = "left-sec">
+                <p>$2.49</p>
+              </section>
+
+              <section class = "right-sec">
+                <button>Add to Cart</button>
+              </section>
+            </section>
+          </section>
+        </div>
+
+        <div class = "row">
+          <section class="product">
+            <img src="../assets/products/walnut-cinnamon-roll.jpg" alt="Product 1">
+            <h2>Walnut Cinnamon Roll</h2>
+            <section class = "descriptions">
+              <section class = "left-sec">
+                <p>Glazing:</p>
+              </section>
+
+              <section class = "right-sec">
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    <span>Keep original</span><span class="dropdown-icon">&#9660;</span>
+                  </button>
+                  <div class="dropdown-content">
+                      <a>Keep original</a>
+                      <a>Sugar milk</a>
+                      <a>Vanilla milk</a>
+                      <a>Double chocolate</a>
+                  </div>
+              </section>
+            </section>
+
+            <section class = "descriptions">
+              <section class = "left-sec">
+                <p>Pack size:</p>
+              </section>
+
+              <section class = "right-sec">
+                <div class = "size">
+                  <button class = "first">1</button>
+                  <button>3</button>
+                  <button>6</button>
+                  <button>12</button>
+                </div>
+              </section>
+            </section>
+
+            <section class = "add-to-cart">
+              <section class = "left-sec">
+                <p>$2.49</p>
+              </section>
+
+              <section class = "right-sec">
+                <button>Add to Cart</button>
+              </section>
+            </section>
+          </section>
+    
+          <section class="product">
+            <img src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="Product 1">
             <h2>Double Chocolate Cinnamon Roll</h2>
             <section class = "descriptions">
               <section class = "left-sec">
@@ -156,7 +255,153 @@
 
               <section class = "right-sec">
                 <div class = "size">
-                  <button>1</button>
+                  <button class = "first">1</button>
+                  <button>3</button>
+                  <button>6</button>
+                  <button>12</button>
+                </div>
+              </section>
+            </section>
+
+            <section class = "add-to-cart">
+              <section class = "left-sec">
+                <p>$2.49</p>
+              </section>
+
+              <section class = "right-sec">
+                <button>Add to Cart</button>
+              </section>
+            </section>
+          </section>
+    
+          <section class="product">
+            <img src="../assets/products/strawberry-cinnamon-roll.jpg" alt="Product 1">
+            <h2>Strawberry Cinnamon Roll</h2>
+            <section class = "descriptions">
+              <section class = "left-sec">
+                <p>Glazing:</p>
+              </section>
+
+              <section class = "right-sec">
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    <span>Keep original</span><span class="dropdown-icon">&#9660;</span>
+                  </button>
+                  <div class="dropdown-content">
+                      <a>Keep original</a>
+                      <a>Sugar milk</a>
+                      <a>Vanilla milk</a>
+                      <a>Double chocolate</a>
+                  </div>
+              </section>
+            </section>
+
+            <section class = "descriptions">
+              <section class = "left-sec">
+                <p>Pack size:</p>
+              </section>
+
+              <section class = "right-sec">
+                <div class = "size">
+                  <button class = "first">1</button>
+                  <button>3</button>
+                  <button>6</button>
+                  <button>12</button>
+                </div>
+              </section>
+            </section>
+
+            <section class = "add-to-cart">
+              <section class = "left-sec">
+                <p>$2.49</p>
+              </section>
+
+              <section class = "right-sec">
+                <button>Add to Cart</button>
+              </section>
+            </section>
+          </section>
+        </div>
+      
+        <div class = "row">
+          <section class="product">
+            <img src="../assets/products/vanilla-cinnamon-roll.jpg" alt="Product 1">
+            <h2>Vanilla Cinnamon Roll</h2>
+            <section class = "descriptions">
+              <section class = "left-sec">
+                <p>Glazing:</p>
+              </section>
+
+              <section class = "right-sec">
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    <span>Keep original</span><span class="dropdown-icon">&#9660;</span>
+                  </button>
+                  <div class="dropdown-content">
+                      <a>Keep original</a>
+                      <a>Sugar milk</a>
+                      <a>Vanilla milk</a>
+                      <a>Double chocolate</a>
+                  </div>
+              </section>
+            </section>
+
+            <section class = "descriptions">
+              <section class = "left-sec">
+                <p>Pack size:</p>
+              </section>
+
+              <section class = "right-sec">
+                <div class = "size">
+                  <button class = "first">1</button>
+                  <button>3</button>
+                  <button>6</button>
+                  <button>12</button>
+                </div>
+              </section>
+            </section>
+
+            <section class = "add-to-cart">
+              <section class = "left-sec">
+                <p>$2.49</p>
+              </section>
+
+              <section class = "right-sec">
+                <button>Add to Cart</button>
+              </section>
+            </section>
+          </section>
+    
+          <section class="product">
+            <img src="../assets/products/walnut-cinnamon-roll.jpg" alt="Product 1">
+            <h2>Walnut Cinnamon Roll</h2>
+            <section class = "descriptions">
+              <section class = "left-sec">
+                <p>Glazing:</p>
+              </section>
+
+              <section class = "right-sec">
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    <span>Keep original</span><span class="dropdown-icon">&#9660;</span>
+                  </button>
+                  <div class="dropdown-content">
+                      <a>Keep original</a>
+                      <a>Sugar milk</a>
+                      <a>Vanilla milk</a>
+                      <a>Double chocolate</a>
+                  </div>
+              </section>
+            </section>
+
+            <section class = "descriptions">
+              <section class = "left-sec">
+                <p>Pack size:</p>
+              </section>
+
+              <section class = "right-sec">
+                <div class = "size">
+                  <button class = "first">1</button>
                   <button>3</button>
                   <button>6</button>
                   <button>12</button>
@@ -176,258 +421,12 @@
           </section>
         </div>
 
-      <div class = "row">
-        <section class="product">
-          <img src="../assets/products/original-cinnamon-roll.jpg" alt="Product 1">
-          <h2>Original Cinnamon Roll</h2>
-          <section class = "descriptions">
-            <section class = "left-sec">
-              <p>Glazing:</p>
-            </section>
-
-            <section class = "right-sec">
-              <div class="dropdown">
-                <button class="dropbtn">
-                  <span>Keep original</span><span class="dropdown-icon">&#9660;</span>
-                </button>
-                <div class="dropdown-content">
-                    <a>Keep original</a>
-                    <a>Sugar milk</a>
-                    <a>Vanilla milk</a>
-                    <a>Double chocolate</a>
-                </div>
-            </section>
-          </section>
-
-          <section class = "descriptions">
-            <section class = "left-sec">
-              <p>Pack size:</p>
-            </section>
-
-            <section class = "right-sec">
-              <div class = "size">
-                <button>1</button>
-                <button>3</button>
-                <button>6</button>
-                <button>12</button>
-              </div>
-            </section>
-          </section>
-
-          <section class = "add-to-cart">
-            <section class = "left-sec">
-              <p>$2.49</p>
-            </section>
-
-            <section class = "right-sec">
-              <button>Add to Cart</button>
-            </section>
-          </section>
-        </section>
-  
-        <section class="product">
-          <img src="../assets/products/raisin-cinnamon-roll.jpg" alt="Product 1">
-          <h2>Raisin Cinnamon Roll</h2>
-          <section class = "descriptions">
-            <section class = "left-sec">
-              <p>Glazing:</p>
-            </section>
-
-            <section class = "right-sec">
-              <div class="dropdown">
-                <button class="dropbtn">
-                  <span>Keep original</span><span class="dropdown-icon">&#9660;</span>
-                </button>
-                <div class="dropdown-content">
-                    <a>Keep original</a>
-                    <a>Sugar milk</a>
-                    <a>Vanilla milk</a>
-                    <a>Double chocolate</a>
-                </div>
-            </section>
-          </section>
-
-          <section class = "descriptions">
-            <section class = "left-sec">
-              <p>Pack size:</p>
-            </section>
-
-            <section class = "right-sec">
-              <div class = "size">
-                <button>1</button>
-                <button>3</button>
-                <button>6</button>
-                <button>12</button>
-              </div>
-            </section>
-          </section>
-
-          <section class = "add-to-cart">
-            <section class = "left-sec">
-              <p>$2.49</p>
-            </section>
-
-            <section class = "right-sec">
-              <button>Add to Cart</button>
-            </section>
-          </section>
-        </section>
-  
-        <section class="product">
-          <img src="../assets/products/strawberry-cinnamon-roll.jpg" alt="Product 1">
-          <h2>Strawberry Cinnamon Roll</h2>
-          <section class = "descriptions">
-            <section class = "left-sec">
-              <p>Glazing:</p>
-            </section>
-
-            <section class = "right-sec">
-              <div class="dropdown">
-                <button class="dropbtn">
-                  <span>Keep original</span><span class="dropdown-icon">&#9660;</span>
-                </button>
-                <div class="dropdown-content">
-                    <a>Keep original</a>
-                    <a>Sugar milk</a>
-                    <a>Vanilla milk</a>
-                    <a>Double chocolate</a>
-                </div>
-            </section>
-          </section>
-
-          <section class = "descriptions">
-            <section class = "left-sec">
-              <p>Pack size:</p>
-            </section>
-
-            <section class = "right-sec">
-              <div class = "size">
-                <button>1</button>
-                <button>3</button>
-                <button>6</button>
-                <button>12</button>
-              </div>
-            </section>
-          </section>
-
-          <section class = "add-to-cart">
-            <section class = "left-sec">
-              <p>$2.49</p>
-            </section>
-
-            <section class = "right-sec">
-              <button>Add to Cart</button>
-            </section>
-          </section>
-        </section>
-      </div>
-      
-      <div class = "row">
-        <section class="product">
-          <img src="../assets/products/vanilla-cinnamon-roll.jpg" alt="Product 1">
-          <h2>Vanilla Cinnamon Roll</h2>
-          <section class = "descriptions">
-            <section class = "left-sec">
-              <p>Glazing:</p>
-            </section>
-
-            <section class = "right-sec">
-              <div class="dropdown">
-                <button class="dropbtn">
-                  <span>Keep original</span><span class="dropdown-icon">&#9660;</span>
-                </button>
-                <div class="dropdown-content">
-                    <a>Keep original</a>
-                    <a>Sugar milk</a>
-                    <a>Vanilla milk</a>
-                    <a>Double chocolate</a>
-                </div>
-            </section>
-          </section>
-
-          <section class = "descriptions">
-            <section class = "left-sec">
-              <p>Pack size:</p>
-            </section>
-
-            <section class = "right-sec">
-              <div class = "size">
-                <button>1</button>
-                <button>3</button>
-                <button>6</button>
-                <button>12</button>
-              </div>
-            </section>
-          </section>
-
-          <section class = "add-to-cart">
-            <section class = "left-sec">
-              <p>$2.49</p>
-            </section>
-
-            <section class = "right-sec">
-              <button>Add to Cart</button>
-            </section>
-          </section>
-        </section>
-  
-        <section class="product">
-          <img src="../assets/products/walnut-cinnamon-roll.jpg" alt="Product 1">
-          <h2>Walnut Cinnamon Roll</h2>
-          <section class = "descriptions">
-            <section class = "left-sec">
-              <p>Glazing:</p>
-            </section>
-
-            <section class = "right-sec">
-              <div class="dropdown">
-                <button class="dropbtn">
-                  <span>Keep original</span><span class="dropdown-icon">&#9660;</span>
-                </button>
-                <div class="dropdown-content">
-                    <a>Keep original</a>
-                    <a>Sugar milk</a>
-                    <a>Vanilla milk</a>
-                    <a>Double chocolate</a>
-                </div>
-            </section>
-          </section>
-
-          <section class = "descriptions">
-            <section class = "left-sec">
-              <p>Pack size:</p>
-            </section>
-
-            <section class = "right-sec">
-              <div class = "size">
-                <button>1</button>
-                <button>3</button>
-                <button>6</button>
-                <button>12</button>
-              </div>
-            </section>
-          </section>
-
-          <section class = "add-to-cart">
-            <section class = "left-sec">
-              <p>$2.49</p>
-            </section>
-
-            <section class = "right-sec">
-              <button>Add to Cart</button>
-            </section>
-          </section>
-        </section>
-      </div>
-      
-        <!-- Repeat similar sections for other products -->
     </main>
 
     <footer>
         <p>&copy; 2023 Bun Bun Bake Shop Website</p>
     </footer>
     
-    <!-- Include your JavaScript scripts here -->
-    <script src="script.js"></script>
+    <!-- For future assignments JavaScript scripts here -->
 </body>
 </html>

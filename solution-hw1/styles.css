@@ -50,13 +50,13 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 40px;
+    margin-right: 100px;
     font-size: 20px;
-}
-
-nav ul li a {
     text-decoration: none;
     color: #333;
+}
+
+nav ul li h2 {
     font-weight: bold;
 }
 
@@ -99,6 +99,15 @@ main {
     padding-bottom: 10px;
 }
 
+.product button {
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
 .descriptions {
     display: flex;
     flex-direction: row;
@@ -126,13 +135,9 @@ main {
 
 /* Style the dropdown button */
 .dropbtn {
-    width: 100%;
-    display: flex;
     justify-content: space-between;
     font-size: 12px;
-    border: 2px solid black; /* Border style, color, and width */
     border-radius: 2px; /* Optional: Rounded corners */
-    background-color: #ffffff; /* Background color */
 }
 
 /* Style the dropdown content (hidden by default) */
@@ -163,30 +168,24 @@ main {
     display: block;
 }
 
-.product button {
-    padding: 5px 10px;
-    cursor: pointer;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    transition: background-color 0.3s ease;
-}
-
 .size {
     display: flex;
     justify-content: space-between;
 }
 
 .size button {
+    justify-content: center;
     width: 30px;
     height: 30px;
+}
+
+.size .first{
+    background-color: #ddd;
 }
 
 .add-to-cart {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     padding-top: 20px;
     height: 50px;
@@ -195,6 +194,7 @@ main {
 }
 
 .add-to-cart button {
+    justify-content: center;
     font-size: 16px;
     font-weight: bold;
 }
@@ -208,9 +208,7 @@ main {
 /* Style the footer */
 footer {
     text-align: center;
-    background-color: #232f3e;
     color: #ffffff;
     padding: 10px 0;
 }
 
-/* Add more specific styles as needed for your website */
