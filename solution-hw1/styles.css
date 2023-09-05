@@ -173,20 +173,6 @@ input:checked + label {
     cursor: pointer; /* Change cursor on hover */
 }
 
-.size {
-    display: inline-block;
-}
-
-.size button {
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-}
-
-.size .first{
-    background-color: #ddd;
-}
-
 .add-to-cart {
     display: flex;
     flex-direction: row;
