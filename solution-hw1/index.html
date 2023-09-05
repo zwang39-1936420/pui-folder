@@ -1,3 +1,12 @@
+<!--
+  Name: Eddie Wang
+  Section: Lab E
+  Used resources: W3chool, ChatGPT, and 
+  https://jsfiddle.net/petrabarus/pPgS7/(for the radio button list)
+  Specifically, I used and only used ChatGPT on 
+  dropdown selection list and radio button list.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +18,7 @@
 <body>
 
     <div class = "column">
-      <img id="logo" src="../assets/logo/logo-01.svg" alt="Product 1">
+      <img src="../assets/logo/logo-01.svg" alt="Product 1">
       <div>
         <nav>
           <ul>
@@ -34,7 +43,7 @@
           <section class="product">
               <img src="../assets/products/original-cinnamon-roll.jpg" alt="Product 1">
               <h2>Original Cinnamon Roll</h2>
-              <div class = "descriptions">
+              <div class = "desc">
                 <div class = "left-sec">
                   <p>Glazing:</p>
                 </div>
@@ -49,35 +58,26 @@
                 </div>
               </div>
 
-              <div class = "descriptions">
+              <div class = "desc">
                 <div class = "left-sec">
                   <p>Pack size:</p>
                 </div>
 
-                <!-- <div class = "right-sec">
-                  <div class = "size">
-                    <button class = "first">1</button>
-                    <button>3</button>
-                    <button>6</button>
-                    <button>12</button>
-                  </div>
-                </div> -->
-
                 <ul class="right-sec">
                   <li >  
-                          <input type="radio" name="options" value="#" id= "radio-ori-1">
+                          <input type="radio" name="set-ori" value="#" id= "radio-ori-1">
                           <label for="radio-ori-1"> 1 </label>
                   </li>
                   <li >
-                          <input type="radio" name="options" value="#" id= "radio-ori-3"> 
+                          <input type="radio" name="set-ori" value="#" id= "radio-ori-3"> 
                           <label for="radio-ori-3"> 3 </label>
                   </li>
                   <li>
-                          <input type="radio" name="options" value="#" id= "radio-ori-6">
+                          <input type="radio" name="set-ori" value="#" id= "radio-ori-6">
                           <label for="radio-ori-6">6</label>
                   </li>
                   <li>
-                          <input type="radio" name="options" value="#" id= "radio-ori-12">
+                          <input type="radio" name="set-ori" value="#" id= "radio-ori-12">
                           <label for="radio-ori-12"> 12 </label>
                   </li>
                 </ul>
@@ -98,7 +98,7 @@
           <section class="product">
             <img src="../assets/products/apple-cinnamon-roll.jpg" alt="Product 1">
             <h2>Apple Cinnamon Roll</h2>
-            <div class = "descriptions">
+            <div class = "desc">
               <div class = "left-sec">
                 <p>Glazing:</p>
               </div>
@@ -113,26 +113,26 @@
                 </div>
             </div>
 
-            <div class = "descriptions">
+            <div class = "desc">
               <div class = "left-sec">
                 <p>Pack size:</p>
               </div>
 
               <ul class="right-sec">
                   <li >  
-                          <input type="radio" name="options" value="#" id= "radio-app-1">
+                          <input type="radio" name="set-app" value="#" id= "radio-app-1">
                           <label for="radio-app-1"> 1 </label>
                   </li>
                   <li >
-                          <input type="radio" name="options" value="#" id= "radio-app-3"> 
+                          <input type="radio" name="set-app" value="#" id= "radio-app-3"> 
                           <label for="radio-app-3"> 3 </label>
                   </li>
                   <li>
-                          <input type="radio" name="options" value="#" id= "radio-app-6">
+                          <input type="radio" name="set-app" value="#" id= "radio-app-6">
                           <label for="radio-app-6">6</label>
                   </li>
                   <li>
-                          <input type="radio" name="options" value="#" id= "radio-app-12">
+                          <input type="radio" name="set-app" value="#" id= "radio-app-12">
                           <label for="radio-app-12"> 12 </label>
                   </li>
                 </ul>
@@ -152,7 +152,7 @@
           <section class="product">
             <img src="../assets/products/raisin-cinnamon-roll.jpg" alt="Product 1">
             <h2>Raisin Cinnamon Roll</h2>
-            <div class = "descriptions">
+            <div class = "desc">
               <div class = "left-sec">
                 <p>Glazing:</p>
               </div>
@@ -167,26 +167,26 @@
                 </div>
             </div>
 
-            <div class = "descriptions">
+            <div class = "desc">
               <div class = "left-sec">
                 <p>Pack size:</p>
               </div>
 
               <ul class="right-sec">
                   <li >  
-                          <input type="radio" name="options" value="#" id= "radio-raisin-1">
+                          <input type="radio" name="set-raisin" value="#" id= "radio-raisin-1">
                           <label for="radio-raisin-1"> 1 </label>
                   </li>
                   <li >
-                          <input type="radio" name="options" value="#" id= "radio-raisin-3"> 
+                          <input type="radio" name="set-raisin" value="#" id= "radio-raisin-3"> 
                           <label for="radio-raisin-3"> 3 </label>
                   </li>
                   <li>
-                          <input type="radio" name="options" value="#" id= "radio-raisin-6">
+                          <input type="radio" name="set-raisin" value="#" id= "radio-raisin-6">
                           <label for="radio-raisin-6">6</label>
                   </li>
                   <li>
-                          <input type="radio" name="options" value="#" id= "radio-raisin-12">
+                          <input type="radio" name="set-raisin" value="#" id= "radio-raisin-12">
                           <label for="radio-raisin-12"> 12 </label>
                   </li>
                 </ul>
@@ -208,7 +208,7 @@
           <section class="product">
             <img src="../assets/products/walnut-cinnamon-roll.jpg" alt="Product 1">
             <h2>Walnut Cinnamon Roll</h2>
-            <div class = "descriptions">
+            <div class = "desc">
               <div class = "left-sec">
                 <p>Glazing:</p>
               </div>
@@ -223,26 +223,26 @@
                 </div>
             </div>
 
-            <div class = "descriptions">
+            <div class = "desc">
               <div class = "left-sec">
                 <p>Pack size:</p>
               </div>
 
               <ul class="right-sec">
                   <li >  
-                          <input type="radio" name="options" value="#" id= "radio-walnut-1">
+                          <input type="radio" name="set-walnut" value="#" id= "radio-walnut-1">
                           <label for="radio-walnut-1"> 1 </label>
                   </li>
                   <li >
-                          <input type="radio" name="options" value="#" id= "radio-walnut-3"> 
+                          <input type="radio" name="set-walnutns" value="#" id= "radio-walnut-3"> 
                           <label for="radio-walnut-3"> 3 </label>
                   </li>
                   <li>
-                          <input type="radio" name="options" value="#" id= "radio-walnut-6">
+                          <input type="radio" name="set-walnut" value="#" id= "radio-walnut-6">
                           <label for="radio-walnut-6">6</label>
                   </li>
                   <li>
-                          <input type="radio" name="options" value="#" id= "radio-walnut-12">
+                          <input type="radio" name="set-walnut" value="#" id= "radio-walnut-12">
                           <label for="radio-walnut-12"> 12 </label>
                   </li>
                 </ul>
@@ -262,7 +262,7 @@
           <section class="product">
             <img src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="Product 1">
             <h2>Double Chocolate Cinnamon Roll</h2>
-            <div class = "descriptions">
+            <div class = "desc">
               <div class = "left-sec">
                 <p>Glazing:</p>
               </div>
@@ -277,26 +277,26 @@
                 </div>
             </div>
 
-            <div class = "descriptions">
+            <div class = "desc">
               <div class = "left-sec">
                 <p>Pack size:</p>
               </div>
 
               <ul class="right-sec">
                   <li >  
-                          <input type="radio" name="options" value="#" id= "radio-dc-1">
+                          <input type="radio" name="set-dc" value="#" id= "radio-dc-1">
                           <label for="radio-dc-1"> 1 </label>
                   </li>
                   <li >
-                          <input type="radio" name="options" value="#" id= "radio-dc-3"> 
+                          <input type="radio" name="set-dc" value="#" id= "radio-dc-3"> 
                           <label for="radio-dc-3"> 3 </label>
                   </li>
                   <li>
-                          <input type="radio" name="options" value="#" id= "radio-dc-6">
+                          <input type="radio" name="set-dc" value="#" id= "radio-dc-6">
                           <label for="radio-dc-6">6</label>
                   </li>
                   <li>
-                          <input type="radio" name="options" value="#" id= "radio-dc-12">
+                          <input type="radio" name="set-dc" value="#" id= "radio-dc-12">
                           <label for="radio-dc-12"> 12 </label>
                   </li>
                 </ul>
@@ -316,7 +316,7 @@
           <section class="product">
             <img src="../assets/products/strawberry-cinnamon-roll.jpg" alt="Product 1">
             <h2>Strawberry Cinnamon Roll</h2>
-            <div class = "descriptions">
+            <div class = "desc">
               <div class = "left-sec">
                 <p>Glazing:</p>
               </div>
@@ -331,26 +331,26 @@
                 </div>
             </div>
 
-            <div class = "descriptions">
+            <div class = "desc">
               <div class = "left-sec">
                 <p>Pack size:</p>
               </div>
 
               <ul class="right-sec">
                   <li >  
-                          <input type="radio" name="options" value="#" id= "radio-stb-1">
+                          <input type="radio" name="set-stb" value="#" id= "radio-stb-1">
                           <label for="radio-stb-1"> 1 </label>
                   </li>
                   <li >
-                          <input type="radio" name="options" value="#" id= "radio-stb-3"> 
+                          <input type="radio" name="set-stb" value="#" id= "radio-stb-3"> 
                           <label for="radio-stb-3"> 3 </label>
                   </li>
                   <li>
-                          <input type="radio" name="options" value="#" id= "radio-stb-6">
+                          <input type="radio" name="set-stb" value="#" id= "radio-stb-6">
                           <label for="radio-stb-6">6</label>
                   </li>
                   <li>
-                          <input type="radio" name="options" value="#" id= "radio-stb-12">
+                          <input type="radio" name="set-stb" value="#" id= "radio-stb-12">
                           <label for="radio-stb-12"> 12 </label>
                   </li>
                 </ul>

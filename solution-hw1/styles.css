@@ -25,16 +25,16 @@ hr {
     margin: 20px 0; 
 }
 
-#logo {
-    padding: 20px;
-    width: 300px;
-}
-
 .column {
     display: flex;
     margin: 0 auto;
     align-items: center;
     max-width: 1200px;
+}
+
+.column img{
+    padding: 20px;
+    width: 300px;
 }
 
 .column div {
@@ -53,7 +53,6 @@ nav ul li {
     margin-right: 100px;
     font-size: 20px;
     text-decoration: none;
-    color: #333;
 }
 
 nav ul li a {
@@ -62,11 +61,7 @@ nav ul li a {
     font-weight: bold;
 }
 
-nav ul li a:hover {
-    background-color: yellow;
-}
-
-#products-navbar {
+nav ul li a:hover, #products-navbar {
     background-color: yellow;
 }
 
@@ -75,7 +70,7 @@ main {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px black;
     font-size: 14px;
 }
 
@@ -87,12 +82,11 @@ main {
     margin-bottom: 50px;
 }
 
-
 .product {
     padding: 10px;
     margin-bottom: 20px;
-    width: 250px; /* Fixed width */
-    height: 400px; /* Fixed height */
+    width: 250px; 
+    height: 400px;
 }
 
 .product img {
@@ -105,15 +99,7 @@ main {
     padding-bottom: 10px;
 }
 
-.product button {
-    padding: 5px 10px;
-    cursor: pointer;
-    width: 100%;
-    display: flex;
-    background-color: white;
-}
-
-.descriptions {
+.desc {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -138,7 +124,9 @@ main {
     display: inline-block;
 }
 
-/* Hide the default radio button */
+/* Hide the default radio button 
+   I used ChatGPT to help me come up 
+   the ratio label and dropdown button */
 input {
     display: none;
 }
@@ -175,7 +163,6 @@ input:checked + label {
 
 .add-to-cart {
     display: flex;
-    flex-direction: row;
     align-items: center;
     padding-top: 20px;
     height: 50px;
@@ -184,9 +171,12 @@ input:checked + label {
 }
 
 .add-to-cart button {
-    justify-content: center;
     font-size: 16px;
     font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 100%;
+    background-color: white;
 }
 
 .product button:hover {
