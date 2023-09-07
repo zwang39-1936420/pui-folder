@@ -61,7 +61,7 @@ nav ul li a {
     font-weight: bold;
 }
 
-nav ul li a:hover, #products-navbar {
+nav ul li a:hover {
     background-color: yellow;
 }
 
