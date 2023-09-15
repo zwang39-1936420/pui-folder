@@ -1,0 +1,66 @@
+<!--
+  Name: Eddie Wang
+  Section: Lab E
+  Used resources: W3chool, ChatGPT, and 
+  https://jsfiddle.net/petrabarus/pPgS7/(for the radio button list)
+  Specifically, I used and only used ChatGPT on 
+  dropdown selection list and radio button list.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Our Hand-Made Cinnamon Rolls</title>
+        <!-- Include your CSS stylesheet here -->
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+
+        <div class = "column">
+            <img src="../assets/logo/logo-01.svg" alt="Product 1">
+            <div>
+                <nav>
+                    <ul>
+                        <!-- For now I used h2 tag for different nav list items-->
+                        <!-- Need to change back to <a href = "#"></a> in the future HW-->
+                        <li id= "cart"><a  href="#">Cart</a></li>
+                        <li id= "product"><a href="#">Products</a></li>
+                    </ul>
+                </nav>
+
+                <div id = "pop-up">
+                    <p>Added to cart: </p>
+                    
+                    <br>
+                    <p class = "cart-headline"> ${product.type} cinnamon roll</p>
+                    <p>${product.glazing}</p>
+                    <p>Pack of ${product.packSize}</p>
+                    <p>Price: ${currentPrice}</p>
+                </div>
+
+                <p class = "summary", id = "numberOfItems">0 items</p>
+                <p class = "summary", id = "totalPrice">Total: $0.00</p>
+                
+                <hr>
+
+                <header>
+                <h1>Our Hand-Made Cinnamon Rolls</h1>
+                </header>
+            </div>
+        </div>
+        
+        <main>
+            <!-- Product listing -->
+            <div class = "row"></div>
+            <div class = "row"></div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Bun Bun Bake Shop Website</p>
+        </footer>
+        <script defer src="./random-element.js"></script>
+        <!-- For future assignments JavaScript scripts here -->
+    </body>
+</html>

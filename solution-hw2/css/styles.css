@@ -1,0 +1,220 @@
+/* Reset some default browser styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and font styles for the whole page */
+body {
+    font-family: Arial, sans-serif;
+    z-index: 1;
+}
+
+/* Style the header */
+header {
+    padding: 5px;
+    text-align: left;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+hr {
+    height: 5px;
+    background-color: black;
+    margin-bottom: 20px; 
+}
+
+.column {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.column img{
+    padding: 20px;
+    width: 300px;
+}
+
+.column > div {
+    width: 100%;
+}
+
+/* Style navigation links */
+nav ul, .summary, .pop-up {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 100px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: yellow;
+}
+
+.summary {
+    color: #333;
+    margin-right: 100px;
+}
+
+#pop-up {
+    width: 250px;
+    height: 125px;
+    position: absolute;
+    right: 100px;
+    border: 1px solid black;
+    background: white;
+    z-index: 2;
+    flex-direction: column;
+    display: none;
+}
+
+#pop-up > p {
+    margin: 2px;
+    font-size: 14px;
+}
+
+#pop-up .cart-headline {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Style the main content area */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* Style product listing */
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.product {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 250px; 
+    height: 400px;
+}
+
+.product img {
+    max-width: 100%;
+    border: 2px solid black;
+}
+
+.product h2 {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.desc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.left-sec {
+    float: left;
+    width: 40%;
+}
+
+.right-sec {
+    float: left;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.right-sec li {
+    display: inline-block;
+}
+
+/* Hide the default radio button 
+   I used ChatGPT to help me come up 
+   the ratio label and dropdown button */
+input {
+    display: none;
+}
+
+label {
+    display: flex;
+    width: 30px; /* Adjust the width and height to make it square */
+    height: 30px;
+    border: 2px solid #333; /* Border color */
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+label:hover {
+    background: #ddd; 
+    transition: background-color 0.3s ease;
+}
+
+/* Style for when the radio button is checked */
+input:checked + label {
+    background: #ddd; /* Background color when selected */
+}
+
+/* Style the dropdown select */
+.dropdown {
+    padding: 8px; /* Adjust padding as needed */
+    border: 1px solid black; 
+    border-radius: 4px; /* Add rounded corners */
+    width: 100%;
+    font-size: 16px; 
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.add-to-cart {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.add-to-cart button {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 100%;
+    background-color: white;
+}
+
+.product button:hover {
+    background-color: yellow;
+    transition: background-color 0.3s ease;
+}
+
+/* Style the footer */
+footer {
+    text-align: center;
+    color: #ffffff;
+    padding: 10px 0;
+}
+
