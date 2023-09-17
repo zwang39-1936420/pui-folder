@@ -34,7 +34,7 @@ function renderProducts() {
             productElement.setAttribute("id", `${products[i*3 + j].id}`);
             productElement.classList.add('product');
             productElement.innerHTML = `
-            <img src="../assets/products/${products[i*3 + j].type}-cinnamon-roll.jpg" alt="Product 1">
+            <img src="../assets/products/${products[i*3 + j].type.toLowerCase()}-cinnamon-roll.jpg" alt="Product 1">
             <h2>${products[i*3 + j].type} Cinnamon Roll</h2>
             <div class = "desc">
                 <div class = "left-sec">
