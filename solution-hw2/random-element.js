@@ -33,40 +33,27 @@ function renderProducts() {
             const productElement = document.createElement('div');
             productElement.setAttribute("id", `${products[i*3 + j].id}`);
             productElement.classList.add('product');
-            productElement.innerHTML = `
-            <img src="../assets/products/${products[i*3 + j].type.toLowerCase()}-cinnamon-roll.jpg" alt="Product 1">
-            <h2>${products[i*3 + j].type} Cinnamon Roll</h2>
-            <div class = "desc">
-                <div class = "left-sec">
-                <p>Glazing:</p>
-                </div>
+            
+            //Image
+            const productImage = document.createElement('img');
+            productImage.setAttribute('src', `../assets/products/${products[i*3 + j].type.toLowerCase()}-cinnamon-roll.jpg`);
+            productImage.setAttribute('alt', 'Product 1');
+            productElement.appendChild(productImage);
 
-                <div class = "right-sec">
-                <select class="dropdown">
-                </select>
-                </div>
-            </div>
+            // header creation
+            const productHeader = document.createElement('h2');
+            productHeader.textContent = `${products[i*3 + j].type} Cinnamon Roll`;
+            productElement.appendChild(productHeader); // append to the parent
 
-            <div class = "desc">
-                <div class = "left-sec">
-                <p>Pack size:</p>
-                </div>
+            // Glazing, packsize, add-to-cart section creation
+            const glazingSection = glazingCreator();
+            productElement.appendChild(glazingSection);
+            const packSizeSection = packSizeCreator();
+            productElement.appendChild(packSizeSection);
+            const addToCartSection = addToCartCreator(products[i*3 + j]);
+            productElement.appendChild(addToCartSection);
 
-                <ul class="right-sec">
-                </ul>
-
-            </div>
-
-            <div class = "add-to-cart">
-                <div class = "left-sec">
-                <p>$${products[i*3 + j].price}</p>
-                </div>
-
-                <div class = "right-sec">
-                <button>Add to Cart</button>
-                </div>
-            </div>
-            `;
+            // Create on product
             productsContainer[i].appendChild(productElement);
 
             // Create Drop Down List
@@ -78,7 +65,6 @@ function renderProducts() {
                 glazingOption[i*3 + j].appendChild(each_glazing);
             });
 
-            
             // Create size option
             const packSizeOption = document.querySelectorAll('ul.right-sec');
             pack_size.forEach(each => {
@@ -130,6 +116,68 @@ function renderProducts() {
     };
 };
 
+function glazingCreator(){
+    const glazingElement = document.createElement('div');
+    glazingElement.classList.add('desc');
+    //left section
+    const leftSec = document.createElement('div');
+    leftSec.classList.add('left-sec');
+    const glazingText = document.createElement('p');
+    glazingText.textContent = 'Glazing:';
+    //right section
+    const rightSec = document.createElement('div');
+    rightSec.classList.add('right-sec');
+    const dropDown = document.createElement('select');
+    dropDown.classList.add('dropdown');
+
+    // Append accordingly 
+    leftSec.appendChild(glazingText);
+    rightSec.appendChild(dropDown);
+    glazingElement.appendChild(leftSec);
+    glazingElement.appendChild(rightSec);
+    return glazingElement;
+}
+
+function packSizeCreator(){
+    const packSizeElement = document.createElement('div');
+    packSizeElement.classList.add('desc');
+
+    const leftSec = document.createElement('div');
+    leftSec.classList.add('left-sec');
+    const rightSec = document.createElement('ul');
+    rightSec.classList.add('right-sec');
+    
+    const packSizeText = document.createElement('p');
+    packSizeText.textContent = 'Pack size:';
+
+    // Append accordingly 
+    leftSec.appendChild(packSizeText);
+    packSizeElement.appendChild(leftSec);
+    packSizeElement.appendChild(rightSec);
+    return packSizeElement;
+}
+
+function addToCartCreator(product){
+    const addToCartElement = document.createElement('div');
+    addToCartElement.classList.add('add-to-cart');
+    //left section
+    const leftSec = document.createElement('div');
+    leftSec.classList.add('left-sec');
+    const priceDisplayText = document.createElement('p');
+    priceDisplayText.textContent = `$${product.price}`;
+    leftSec.appendChild(priceDisplayText);
+
+    const rightSec = document.createElement('div');
+    rightSec.classList.add('right-sec');
+    const addToCartButton = document.createElement('button');
+    addToCartButton.textContent = 'Add to Cart';
+    rightSec.appendChild(addToCartButton);
+
+    // Append accordingly 
+    addToCartElement.appendChild(leftSec);
+    addToCartElement.appendChild(rightSec);
+    return addToCartElement;
+}
 
 function glazingOptionCalculator(option) {
     let adaption = 0;
