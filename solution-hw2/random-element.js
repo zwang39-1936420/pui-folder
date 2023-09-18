@@ -116,6 +116,7 @@ function renderProducts() {
     };
 };
 
+// helper function to create the glazing section
 function glazingCreator(){
     const glazingElement = document.createElement('div');
     glazingElement.classList.add('desc');
@@ -138,15 +139,16 @@ function glazingCreator(){
     return glazingElement;
 }
 
+// helper function to create the pack size section
 function packSizeCreator(){
     const packSizeElement = document.createElement('div');
     packSizeElement.classList.add('desc');
-
+    // left column
     const leftSec = document.createElement('div');
     leftSec.classList.add('left-sec');
+    // right column
     const rightSec = document.createElement('ul');
     rightSec.classList.add('right-sec');
-    
     const packSizeText = document.createElement('p');
     packSizeText.textContent = 'Pack size:';
 
@@ -157,16 +159,18 @@ function packSizeCreator(){
     return packSizeElement;
 }
 
+// helper function to create add-to-cart section 
 function addToCartCreator(product){
     const addToCartElement = document.createElement('div');
     addToCartElement.classList.add('add-to-cart');
-    //left section
+
+    //left column
     const leftSec = document.createElement('div');
     leftSec.classList.add('left-sec');
     const priceDisplayText = document.createElement('p');
     priceDisplayText.textContent = `$${product.price}`;
     leftSec.appendChild(priceDisplayText);
-
+    //right column
     const rightSec = document.createElement('div');
     rightSec.classList.add('right-sec');
     const addToCartButton = document.createElement('button');
