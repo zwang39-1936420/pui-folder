@@ -1,4 +1,5 @@
 import React from 'react';
+import PackSize from './PackSize';
 
 
 function Product({ product }) {
@@ -26,24 +27,7 @@ function Product({ product }) {
                   <p>Pack size:</p>
                 </div>
 
-                <ul className="right-sec">
-                  <li >  
-                          <input type="radio" name="set-ori" value="#" id= "radio-ori-1"/>
-                          <label for="radio-ori-1"> 1 </label>
-                  </li>
-                  <li >
-                          <input type="radio" name="set-ori" value="#" id= "radio-ori-3"/> 
-                          <label for="radio-ori-3"> 3 </label>
-                  </li>
-                  <li>
-                          <input type="radio" name="set-ori" value="#" id= "radio-ori-6"/>
-                          <label for="radio-ori-6">6</label>
-                  </li>
-                  <li>
-                          <input type="radio" name="set-ori" value="#" id= "radio-ori-12"/>
-                          <label for="radio-ori-12"> 12 </label>
-                  </li>
-                </ul>
+                <PackSize position = {product} />
 
               </div>
 
