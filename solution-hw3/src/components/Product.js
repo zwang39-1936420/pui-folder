@@ -33,7 +33,7 @@ function Product({ product }) {
 
               <div className = "add-to-cart">
                 <div className = "left-sec">
-                  <p>{product.price}</p>
+                  <p>${product.price}</p>
                 </div>
 
                 <div className = "right-sec">
