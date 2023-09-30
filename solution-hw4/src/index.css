@@ -84,7 +84,6 @@ nav ul li button:hover {
   background: white;
   z-index: 2;
   flex-direction: column;
-  display: none;
 }
 
 #pop-up > p {

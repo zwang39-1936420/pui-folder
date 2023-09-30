@@ -17,7 +17,7 @@ function PackSize(props) {
     
         // Call the parent's callback function to update its state
         props.setSize(currentPackSize);
-        props.setCurrentPrice((currentPackSize * (props.glazing + props.position.price)).toFixed(2))
+        props.setPrice((currentPackSize * (props.glazing + props.position.price)).toFixed(2))
       };
   
     return (

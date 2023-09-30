@@ -1,8 +1,8 @@
 import React from 'react';
-import Product from './Product';
 import Logo from '../assets/logo/logo-01.svg';
 
-function Header() {
+function Header(props) {
+
   return (
     <div className = "column">
             <img src={Logo} alt="logo"/>
@@ -13,19 +13,19 @@ function Header() {
                         <li id= "product"><button>Products</button></li>
                     </ul>
                 </nav>
-
+              {props.toggle && (
                 <div id = "pop-up">
                     <p>Added to cart: </p>
                     
                     <br></br>
-                    <p className = "cart-headline"> ${Product.type} cinnamon roll</p>
-                    <p>${Product.glazing}</p>
-                    <p>Pack of ${Product.packSize}</p>
-                    {/* <p>Price: ${currentPrice}</p> */}
+                    <p className = "cart-headline"> {props.type} cinnamon roll</p>
+                    <p>{props.glazing}</p>
+                    <p>Pack of {props.size}</p>
+                    <p>Price: ${props.currentPrice}</p>
                 </div>
-
-                <p className = "summary" id = "numberOfItems">0 items</p>
-                <p className = "summary" id = "totalPrice">Total: $0.00</p>
+              )}
+                <p className = "summary" id = "numberOfItems">{props.count} items</p>
+                <p className = "summary" id = "totalPrice">Total: ${props.price}</p>
                 
                 <hr></hr>
 

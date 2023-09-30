@@ -14,7 +14,7 @@ function Glazing(props) {
     const handleGlazingChanges = (e) => {
         // Update the current glazing
         glazings.forEach( glaze => {
-            console.log(glaze.option);
+            console.log((glaze.option == e.target.value));
             if(glaze.option == e.target.value){
                 setCurrentGlaze(glaze.adaption);
                 // Call the parent's callback function to update its state

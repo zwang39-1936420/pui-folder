@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState }from 'react';
 import Glazing from './Glazings';
 import PackSize from './PackSize';
 
 
 
-function Product({ product }) {
+function Product({ product, totalPrice, count, size, glazing, setType, setGlaze, setSize, setTotalPrice, setShowUp, setCount, setCopy}) {
 
-  const [currentPackSize, setCurrentPackSize] = useState(product.packSize);
-  const [currentGlazing, setCurrentGlazing] = useState(product.glazing);
-  const [currentPrice, setCurrentPrice] = useState(product.price);
-  
-  // const handleAddToCart = (e) => {
-  //   // Update the current glazing
-  //   setcurrentPackSize(e.target.value);
+  const [price, setPrice] = useState(product.price);
+  const toggleReminder = () => {
+    setTotalPrice(totalPrice + price);
+    setCopy(price);
+    setCount(count+1);
+    setShowUp(true);
+    setTimeout(() => {
+      setShowUp(false);
+    }, 3000);
+    setType(product.type);
+  };
 
-  //   // Call the parent's callback function to update its state
-  //   props.setSize(e.target.value);
-  // };
 
   return (
     <section className="product">
@@ -29,7 +30,7 @@ function Product({ product }) {
 
               
                 <div className = "right-sec">
-                    <Glazing setGlazing = {setCurrentGlazing} setCurrentPrice = {setCurrentPrice} size = {currentPackSize}/>
+                    <Glazing setGlazing = {setGlaze} setPrice = {setPrice} size = {size}/>
                 </div>
               </div>
 
@@ -38,17 +39,17 @@ function Product({ product }) {
                   <p>Pack size:</p>
                 </div>
 
-                <PackSize setSize = {setCurrentPackSize} setCurrentPrice = {setCurrentPrice}  glazing = {currentGlazing} position = {product} />
+                <PackSize setSize = {setSize} setPrice = {setPrice}  glazing = {glazing} position = {product} />
 
               </div>
 
               <div className = "add-to-cart">
                 <div className = "left-sec">
-                  <p>${currentPrice}</p>
+                  <p>${price}</p>
                 </div>
 
                 <div className = "right-sec">
-                  <button>Add to Cart</button>
+                  <button onClick={toggleReminder}>Add to Cart</button>
                 </div>
               </div>
           </section>
