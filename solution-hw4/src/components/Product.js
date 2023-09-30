@@ -1,15 +1,14 @@
-import React, { useState, useEffect }from 'react';
+import React, { useState } from 'react';
 import Glazing from './Glazings';
 import PackSize from './PackSize';
 
 
-
 function Product({ product, totalPrice, count, size, glazing, setType, setGlaze, setSize, setTotalPrice, setShowUp, setCount, setCopy}) {
 
-  const [price, setPrice] = useState(product.price);
-  console.log(price);
+  const [price, setPrice]= useState(product.price);
+
   const toggleReminder = () => {
-    setTotalPrice(totalPrice + price);
+    setTotalPrice((parseFloat(totalPrice) + parseFloat(price)).toFixed(2));
     setCopy(price);
     setCount(count+1);
     setShowUp(true);
@@ -31,7 +30,7 @@ function Product({ product, totalPrice, count, size, glazing, setType, setGlaze,
 
       
         <div className = "right-sec">
-            <Glazing setGlazing = {setGlaze} setPrice = {setPrice} position = {product} size = {size}/>
+            <Glazing setGlazing = {setGlaze} setPrice = {setPrice} price = {price} position = {product} size = {size}/>
         </div>
       </div>
 
@@ -40,7 +39,7 @@ function Product({ product, totalPrice, count, size, glazing, setType, setGlaze,
           <p>Pack size:</p>
         </div>
 
-        <PackSize setSize = {setSize} setPrice = {setPrice}  glazing = {glazing} position = {product} />
+        <PackSize setSize = {setSize} setPrice = {setPrice} price = {price} glazing = {glazing} position = {product} />
 
       </div>
 
@@ -53,6 +52,7 @@ function Product({ product, totalPrice, count, size, glazing, setType, setGlaze,
           <button onClick={toggleReminder}>Add to Cart</button>
         </div>
       </div>
+
     </section>
   );
 }

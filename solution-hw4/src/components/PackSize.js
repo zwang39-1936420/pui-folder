@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 
 function PackSize(props) {
-  
+
+    const glazings = [
+        { option:"Keep Original", adaption: 0},
+        { option:"Sugar Milk", adaption: 0},
+        { option:"Vanilla Milk", adaption: 0.5},
+        { option:"Double Chocolate", adaption: 1.5},
+    ];
+
     const [currentPackSize, setcurrentPackSize] = useState(1);
     const slice = props.position.type.slice(0, 3)
     const shortName = "set-" + slice.toLowerCase();
@@ -19,8 +26,12 @@ function PackSize(props) {
   
     useEffect(() => {
         // This code runs after each render, including when state changes
-        props.setSize(currentPackSize);
-        props.setPrice((currentPackSize * (props.glazing  + props.position.price)).toFixed(2));
+        glazings.forEach( glaze => {
+        if(glaze.option.toLowerCase() == props.glazing.toLowerCase()){
+                props.setSize(currentPackSize);
+                props.setPrice((currentPackSize * (glaze.adaption  + props.position.price)).toFixed(2));
+        }
+        })    
     }, [currentPackSize]);
 
     return (

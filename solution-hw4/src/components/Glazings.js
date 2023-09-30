@@ -10,15 +10,12 @@ function Glazing(props) {
         { option:"Double Chocolate", adaption: 1.5},
     ];
     const [currentGlaze, setCurrentGlaze] = useState(0.0);
-    props.setGlazing(currentGlaze);
 
     const handleGlazingChanges = (e) => {
         // Update the current glazing
         glazings.forEach( glaze => {
             if(glaze.option.toLocaleLowerCase() == e.target.value.toLocaleLowerCase()){
                 setCurrentGlaze(glaze.adaption);
-                // Call the parent's callback function to update its stat
-                // console.log(currentGlaze);  
             }
             }
         )
@@ -28,7 +25,7 @@ function Glazing(props) {
     // This code runs after each render, including when state changes
     glazings.forEach( glaze => {
         if(glaze.adaption == currentGlaze){
-            setCurrentGlaze(glaze.option);
+            props.setGlazing(glaze.option);
         }
         }
     )
