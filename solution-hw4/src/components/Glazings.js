@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React , {useState, useEffect} from 'react';
 
 
 function Glazing(props) {
@@ -9,23 +9,26 @@ function Glazing(props) {
         { option:"Vanilla Milk", adaption: 0.5},
         { option:"Double Chocolate", adaption: 1.5},
     ];
-    const [currentGlaze, setCurrentGlaze] = useState(0);
+    const [currentGlaze, setCurrentGlaze] = useState(0.0);
 
     const handleGlazingChanges = (e) => {
         // Update the current glazing
         glazings.forEach( glaze => {
-            console.log((glaze.option == e.target.value));
-            if(glaze.option == e.target.value){
+            if(glaze.option.toLocaleLowerCase() == e.target.value.toLocaleLowerCase()){
                 setCurrentGlaze(glaze.adaption);
-                // Call the parent's callback function to update its state
-                props.setGlazing(glaze.adaption);
-                console.log(currentGlaze);
-                props.setCurrentPrice((props.size * (currentGlaze + props.position.price)).toFixed(2));
+                // Call the parent's callback function to update its stat
+                // console.log(currentGlaze);  
             }
             }
         )
       };
     
+    useEffect(() => {
+    // This code runs after each render, including when state changes
+        props.setGlazing(currentGlaze);
+        props.setPrice((props.size * (currentGlaze + props.position.price)).toFixed(2));
+    }, [currentGlaze]);
+
     return (
         <select className="dropdown" onChange={(e) => {handleGlazingChanges(e)}}>
             <option value="Keep original">Keep original</option>

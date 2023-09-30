@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 function PackSize(props) {
@@ -14,12 +14,15 @@ function PackSize(props) {
     const handlePackSizeChanges = (e) => {
         // Update the current glazing
         setcurrentPackSize(e.target.value);
-    
         // Call the parent's callback function to update its state
-        props.setSize(currentPackSize);
-        props.setPrice((currentPackSize * (props.glazing + props.position.price)).toFixed(2))
       };
   
+    useEffect(() => {
+        // This code runs after each render, including when state changes
+        props.setSize(currentPackSize);
+        props.setPrice((currentPackSize * (props.glazing  + props.position.price)).toFixed(2));
+    }, [currentPackSize]);
+
     return (
 
     <ul className="right-sec" onChange={(e) => handlePackSizeChanges(e)}>

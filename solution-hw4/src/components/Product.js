@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React, { useState, useEffect }from 'react';
 import Glazing from './Glazings';
 import PackSize from './PackSize';
 
@@ -18,6 +18,9 @@ function Product({ product, totalPrice, count, size, glazing, setType, setGlaze,
     setType(product.type);
   };
 
+  useEffect(() => {
+    // This code runs after each render, including when state changes
+    }, [price]);
 
   return (
     <section className="product">
@@ -30,7 +33,7 @@ function Product({ product, totalPrice, count, size, glazing, setType, setGlaze,
 
               
                 <div className = "right-sec">
-                    <Glazing setGlazing = {setGlaze} setPrice = {setPrice} size = {size}/>
+                    <Glazing setGlazing = {setGlaze} setPrice = {setPrice} position = {product} size = {size}/>
                 </div>
               </div>
 
