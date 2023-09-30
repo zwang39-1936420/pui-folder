@@ -10,6 +10,7 @@ function Glazing(props) {
         { option:"Double Chocolate", adaption: 1.5},
     ];
     const [currentGlaze, setCurrentGlaze] = useState(0.0);
+    props.setGlazing(currentGlaze);
 
     const handleGlazingChanges = (e) => {
         // Update the current glazing
@@ -25,7 +26,12 @@ function Glazing(props) {
     
     useEffect(() => {
     // This code runs after each render, including when state changes
-        props.setGlazing(currentGlaze);
+    glazings.forEach( glaze => {
+        if(glaze.adaption == currentGlaze){
+            setCurrentGlaze(glaze.option);
+        }
+        }
+    )
         props.setPrice((props.size * (currentGlaze + props.position.price)).toFixed(2));
     }, [currentGlaze]);
 
