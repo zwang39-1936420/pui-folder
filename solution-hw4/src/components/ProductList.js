@@ -14,12 +14,12 @@ function ProductList(props) {
             product={product} 
             totalPrice = {props.price} 
             count = {props.count} 
+            timer = {props.timer}
             setCount = {props.setCount} 
             setType = {props.setType} 
             setGlaze = {props.setGlaze} 
             setSize = {props.setSize} 
             setTotalPrice = {props.setPrice} 
-            setShowUp = {props.setShowUp} 
             setCopy = {props.setCopy}
           />
         ))}

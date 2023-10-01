@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 
 function PackSize(props) {
@@ -13,7 +13,6 @@ function PackSize(props) {
     const handlePackSizeChanges = (e) => {
         // Update the current glazing
         props.setSize(e.target.value);
-        // Call the parent's callback function to update its state
       };
 
 

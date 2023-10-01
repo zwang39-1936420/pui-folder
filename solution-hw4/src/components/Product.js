@@ -3,7 +3,7 @@ import Glazing from './Glazings';
 import PackSize from './PackSize';
 
 
-function Product({ product, totalPrice, count, size, glazing, setType, setGlaze, setSize, setTotalPrice, setShowUp, setCount, setCopy}) {
+function Product({ product, totalPrice, count, size, glazing, timer, setType, setGlaze, setSize, setTotalPrice, setCount, setCopy}) {
 
   const glazings = [
     { option:"Keep Original", adaption: 0},
@@ -22,10 +22,7 @@ function Product({ product, totalPrice, count, size, glazing, setType, setGlaze,
     setSize(currentPackSize);
     setCopy(price);
     setCount(count+1);
-    setShowUp(true);
-    setTimeout(() => {
-      setShowUp(false);
-    }, 3000);
+    timer();
     setType(product.type);
   };
 

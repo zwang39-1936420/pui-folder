@@ -22,8 +22,22 @@ function Index() {
     const [totalPrice, setTotalPrice] = useState(0.0);
     const [copyCurrentPrice, setCopyCurrentPrice] = useState(0.0);
     const [currentCount, setCount] = useState(0.0);
+    const [timerId, setTimerId] = useState(null);
 
-
+    const startTimer = () => {
+        // Clear any existing timeout (if it exists)
+        if (timerId) {
+          clearTimeout(timerId);
+        }
+        setShowReminder(true);
+        // Set a new timeout
+        const newTimerId = setTimeout(() => {
+            setShowReminder(false);
+        }, 3000); // 3 seconds
+    
+        // Store the new timeout ID in state
+        setTimerId(newTimerId);
+      };
 
     return (
         <div className="App">
@@ -43,13 +57,13 @@ function Index() {
                     glazing={currentGlazing} 
                     price={totalPrice} 
                     count = {currentCount} 
+                    timer = {startTimer}
                     setCount = {setCount} 
                     setType={setCurrentType} 
                     setGlaze={setCurrentGlazing} 
                     setSize={setCurrentPackSize} 
                     setPrice={setTotalPrice} 
                     setCopy={setCopyCurrentPrice} 
-                    setShowUp = {setShowReminder}
                 />
                 <ProductList 
                     products={products_two} 
@@ -57,13 +71,13 @@ function Index() {
                     glazing={currentGlazing} 
                     price={totalPrice} 
                     count = {currentCount} 
+                    timer = {startTimer}
                     setCount = {setCount} 
                     setType={setCurrentType} 
                     setGlaze={setCurrentGlazing} 
                     setSize={setCurrentPackSize} 
                     setPrice={setTotalPrice} 
                     setCopy={setCopyCurrentPrice} 
-                    setShowUp = {setShowReminder}
                 />
             </main>
             <footer>

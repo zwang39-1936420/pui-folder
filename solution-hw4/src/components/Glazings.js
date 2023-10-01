@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React from 'react';
 
 
 function Glazing(props) {
@@ -8,7 +8,7 @@ function Glazing(props) {
         { option:"Vanilla Milk", adaption: 0.5},
         { option:"Double Chocolate", adaption: 1.5},
       ];
-      
+
     const handleGlazingChanges = (e) => {
         // Update the current glazing
         glazings.forEach( glaze => {
