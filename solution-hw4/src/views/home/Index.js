@@ -27,10 +27,44 @@ function Index() {
 
     return (
         <div className="App">
-            <Header toggle={showReminder} type={currentType} size={currentPackSize} glazing={currentGlazing} price={totalPrice} currentPrice = {copyCurrentPrice} count={currentCount} />
+            <Header 
+                toggle={showReminder} 
+                type={currentType} 
+                size={currentPackSize} 
+                glazing={currentGlazing} 
+                price={totalPrice} 
+                currentPrice = {copyCurrentPrice} 
+                count={currentCount} 
+            />
             <main>
-                <ProductList products={products_one} size={currentPackSize} glazing={currentGlazing} price={totalPrice} count = {currentCount} setCount = {setCount} setType={setCurrentType} setGlaze={setCurrentGlazing} setSize={setCurrentPackSize} setPrice={setTotalPrice} setCopy={setCopyCurrentPrice} setShowUp = {setShowReminder}/>
-                <ProductList products={products_two} size={currentPackSize} glazing={currentGlazing} price={totalPrice} count = {currentCount} setCount = {setCount} setType={setCurrentType} setGlaze={setCurrentGlazing} setSize={setCurrentPackSize} setPrice={setTotalPrice} setCopy={setCopyCurrentPrice} setShowUp = {setShowReminder}/>
+                <ProductList 
+                    products={products_one} 
+                    size={currentPackSize} 
+                    glazing={currentGlazing} 
+                    price={totalPrice} 
+                    count = {currentCount} 
+                    setCount = {setCount} 
+                    setType={setCurrentType} 
+                    setGlaze={setCurrentGlazing} 
+                    setSize={setCurrentPackSize} 
+                    setPrice={setTotalPrice} 
+                    setCopy={setCopyCurrentPrice} 
+                    setShowUp = {setShowReminder}
+                />
+                <ProductList 
+                    products={products_two} 
+                    size={currentPackSize} 
+                    glazing={currentGlazing} 
+                    price={totalPrice} 
+                    count = {currentCount} 
+                    setCount = {setCount} 
+                    setType={setCurrentType} 
+                    setGlaze={setCurrentGlazing} 
+                    setSize={setCurrentPackSize} 
+                    setPrice={setTotalPrice} 
+                    setCopy={setCopyCurrentPrice} 
+                    setShowUp = {setShowReminder}
+                />
             </main>
             <footer>
                 <p>&copy; 2023 Bun Bun Bake Shop Website</p>
