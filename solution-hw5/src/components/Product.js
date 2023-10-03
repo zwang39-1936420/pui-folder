@@ -3,7 +3,7 @@ import Glazing from './Glazings';
 import PackSize from './PackSize';
 
 
-function Product({ product, totalPrice, count, size, glazing, timer, setType, setGlaze, setSize, setTotalPrice, setCount, setCopy}) {
+function Product({key, imageSrc, product, totalPrice, count, size, glazing, setType, setGlaze, setSize, setTotalPrice, setCount, setCopy, setCart, dummie, setCounter}) {
 
   const glazings = [
     { option:"Keep Original", adaption: 0},
@@ -22,8 +22,10 @@ function Product({ product, totalPrice, count, size, glazing, timer, setType, se
     setSize(currentPackSize);
     setCopy(price);
     setCount(count+1);
-    timer();
     setType(product.type);
+    setCounter(dummie + 1);
+    const newElement = { id: dummie, imageSrc: imageSrc, type: product.type, glazing: glazing, size: size, price: price}; 
+    setCart(prevArray => [...prevArray, newElement]);
   };
 
   useEffect(() => {
@@ -38,7 +40,6 @@ function Product({ product, totalPrice, count, size, glazing, timer, setType, se
     setPrice((currentPackSize * (temp + product.price)).toFixed(2));
     }, [currentGlazing]);
 
-  //console.log(price)
   useEffect(() => {
     // This code runs after each render, including when state changes
     glazings.forEach( glaze => {

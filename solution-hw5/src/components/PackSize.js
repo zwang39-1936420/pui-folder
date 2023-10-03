@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 
 function PackSize(props) {
 
-    const slice = props.position.type.slice(0, 3)
+    const slice = props.position.type.slice(0, 3);
     const shortName = "set-" + slice.toLowerCase();
     const shortIdOne = "radio-" + slice.toLowerCase() + "-1";
     const shortIdThree = "radio-" + slice.toLowerCase() + "-3";
@@ -15,24 +15,29 @@ function PackSize(props) {
         props.setSize(e.target.value);
       };
 
+    const [selectedOption, setSelectedOption] = useState("1"); // Set the default selected option
+
+    const handleOptionChange = (event) => {
+        setSelectedOption(event.target.value);
+    };
 
     return (
 
     <ul className="right-sec" onChange={(e) => handlePackSizeChanges(e)}>
         <li >  
-                <input type="radio" name={shortName} value="1" id= {shortIdOne}/>
+                <input type="radio" name={shortName} value="1" checked={selectedOption === '1'} onChange={handleOptionChange} id= {shortIdOne}/>
                 <label htmlFor={shortIdOne}> 1 </label>
         </li>
         <li >
-                <input type="radio" name={shortName} value="3" id= {shortIdThree}/> 
+                <input type="radio" name={shortName} value="3" checked={selectedOption === '3'} onChange={handleOptionChange} id= {shortIdThree}/> 
                 <label htmlFor={shortIdThree}> 3 </label>
         </li>
         <li>
-                <input type="radio" name={shortName} value="5" id= {shortIdSix}/>
+                <input type="radio" name={shortName} value="5" checked={selectedOption === '5'} onChange={handleOptionChange} id= {shortIdSix}/>
                 <label htmlFor={shortIdSix}>6</label>
         </li>
         <li>
-                <input type="radio" name={shortName} value="10" id= {shortIdTwelve}/>
+                <input type="radio" name={shortName} value="10" checked={selectedOption === '10'} onChange={handleOptionChange} id= {shortIdTwelve}/>
                 <label htmlFor={shortIdTwelve}> 12 </label>
         </li>
     </ul>

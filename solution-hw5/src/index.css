@@ -104,19 +104,24 @@ main {
   font-size: 14px;
 }
 
-/* Style product listing */
-.row {
+.search-bar {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
 }
 
+/* Style product listing */
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
 .product {
   padding: 10px;
-  margin-bottom: 20px;
   width: 250px; 
-  height: 400px;
 }
 
 .product img {
@@ -159,6 +164,10 @@ main {
  the ratio label and dropdown button */
 input {
   display: none;
+}
+
+#search-bar {
+  display:flex;
 }
 
 label {
