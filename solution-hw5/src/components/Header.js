@@ -10,7 +10,6 @@ function Header(props) {
       { option:"6", adaption: 5},
       { option:"12", adaption: 10},
   ];
-  console.log(props.cart)
   const translator = (number) => {
     let temp = ""; 
     pack_size.forEach( pack => {
@@ -39,7 +38,17 @@ function Header(props) {
               </nav>
               
               <hr></hr>
-
+              {props.toggle && (
+                <div id = "pop-up">
+                    <p>Added to cart: </p>
+                    
+                    <br></br>
+                    <p className = "cart-headline"> {props.type} cinnamon roll</p>
+                    <p>{props.glazing}</p>
+                    <p>Pack of {packSize}</p>
+                    <p>Price: ${props.currentPrice}</p>
+                </div>
+              )}
               <header>
               <h1>Our Hand-Made Cinnamon Rolls</h1>
               </header>
@@ -51,10 +60,8 @@ function Header(props) {
           <hr></hr>
           <ShoppingCart
             product={props.cart}
-            type={props.type}
-            glazing={props.glazing}
-            packSize={packSize}
-            currentPrice={props.currentPrice} 
+            count = {props.count}
+            totalPrice = {props.price}
           />
         </>
       )}

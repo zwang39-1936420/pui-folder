@@ -17,7 +17,7 @@ function Index() {
 
 
     
-
+    const [showReminder, setShowReminder] = useState(false);
     const [currentCart, setCurrentCart] = useState([]);
     const [currentPackSize, setCurrentPackSize] = useState(1);
     const [currentGlazing, setCurrentGlazing] = useState("Keep Original");
@@ -26,6 +26,7 @@ function Index() {
     const [copyCurrentPrice, setCopyCurrentPrice] = useState(0.0);
     const [currentCount, setCount] = useState(0.0);
     const [dummieCounter, setDummieCounter] = useState(0);
+    const [timerId, setTimerId] = useState(null);
     const [filteredItems, setFilteredItems] = useState();
 
     // // Function to add an element to the array
@@ -34,9 +35,25 @@ function Index() {
     //     setMyArray(prevArray => [...prevArray, newElement]);
     //   };
 
+    const startTimer = () => {
+        // Clear any existing timeout (if it exists)
+        if (timerId) {
+          clearTimeout(timerId);
+        }
+        setShowReminder(true);
+        // Set a new timeout
+        const newTimerId = setTimeout(() => {
+            setShowReminder(false);
+        }, 3000); // 3 seconds
+    
+        // Store the new timeout ID in state
+        setTimerId(newTimerId);
+      };
+
     return (
         <div className="App">
             <Header 
+                toggle={showReminder} 
                 type={currentType} 
                 size={currentPackSize} 
                 glazing={currentGlazing} 
@@ -62,6 +79,7 @@ function Index() {
                     setPrice={setTotalPrice} 
                     setCopy={setCopyCurrentPrice} 
                     setCart = {setCurrentCart}
+                    timer = {startTimer}
                     dummie = {dummieCounter}
                     setDummieCounter = {setDummieCounter}
                 />

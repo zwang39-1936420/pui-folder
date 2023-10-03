@@ -4,18 +4,17 @@ import Product from './Product';
 
 
 function ProductList(props) {
-  
+
   return (
       <div className="row">
         {props.products.map((product) => (
           <Product 
             key={product.id}
-            imageSrc = {product.imageSrc}
-            size = {props.size} 
-            glazing = {props.glazing} 
-            product={product} 
-            totalPrice = {props.price} 
             count = {props.count} 
+            dummie = {props.dummie} 
+            glazing = {props.glazing} 
+            imageSrc = {product.imageSrc}
+            product={product}     
             setCount = {props.setCount} 
             setType = {props.setType} 
             setGlaze = {props.setGlaze} 
@@ -23,8 +22,10 @@ function ProductList(props) {
             setTotalPrice = {props.setPrice} 
             setCopy = {props.setCopy}
             setCart = {props.setCart}
-            dummie = {props.dummie}
             setCounter = {props.setDummieCounter}
+            size = {props.size} 
+            timer = {props.timer}
+            totalPrice = {props.price} 
           />
         ))}
       </div>

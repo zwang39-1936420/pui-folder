@@ -3,7 +3,7 @@ import Glazing from './Glazings';
 import PackSize from './PackSize';
 
 
-function Product({key, imageSrc, product, totalPrice, count, size, glazing, setType, setGlaze, setSize, setTotalPrice, setCount, setCopy, setCart, dummie, setCounter}) {
+function Product({key, imageSrc, product, totalPrice, count, size, timer, glazing, setType, setGlaze, setSize, setTotalPrice, setCount, setCopy, setCart, dummie, setCounter}) {
 
   const glazings = [
     { option:"Keep Original", adaption: 0},
@@ -11,6 +11,21 @@ function Product({key, imageSrc, product, totalPrice, count, size, glazing, setT
     { option:"Vanilla Milk", adaption: 0.5},
     { option:"Double Chocolate", adaption: 1.5},
   ];
+  const pack_size = [
+    { option:"1", adaption: 1},
+    { option:"3", adaption: 3},
+    { option:"6", adaption: 5},
+    { option:"12", adaption: 10},
+  ];
+  const translator = (number) => {
+    let temp = ""; 
+    pack_size.forEach( pack => {
+      if(pack.adaption == number){
+        temp = pack.option;
+      }
+    })
+    return (temp);
+  };
 
   const [price, setPrice]= useState(product.price);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
   const [currentPackSize, setCurrentPackSize] = useState(1);
@@ -22,9 +37,10 @@ function Product({key, imageSrc, product, totalPrice, count, size, glazing, setT
     setSize(currentPackSize);
     setCopy(price);
     setCount(count+1);
+    timer();
     setType(product.type);
     setCounter(dummie + 1);
-    const newElement = { id: dummie, imageSrc: imageSrc, type: product.type, glazing: glazing, size: size, price: price}; 
+    const newElement = { id: dummie, imageSrc: imageSrc, type: product.type, glazing: glazing, size: translator(size), price: price}; 
     setCart(prevArray => [...prevArray, newElement]);
   };
 

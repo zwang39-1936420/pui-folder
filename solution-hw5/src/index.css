@@ -115,8 +115,10 @@ main {
 .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
+  max-width: fit-content;
+  margin-left: 15%;
   margin-bottom: 50px;
+  justify-self: center;
 }
 
 .product {
@@ -132,6 +134,10 @@ main {
 .product h2 {
   padding-top: 5px;
   padding-bottom: 10px;
+}
+
+.cart{
+  width: 150px;
 }
 
 .desc {
