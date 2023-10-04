@@ -62,6 +62,7 @@ function Header(props) {
             count = {props.count}
             totalPrice = {props.price}
           />
+          <hr></hr>
         </>
       )}
     </>

@@ -60,20 +60,24 @@ function SearchBar({ items, setFilteredItems}) {
   return (
     <div className='search-bar'>
         {/* Search input field */}
-        <input
-            id = "search-bar"
-            type="text"
-            placeholder="Search..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        <div className = "temp">
+          <input
+              id = "search-bar"
+              type="text"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+          />
 
-        <button onClick={filterItems}>Search</button>
-        <p> Sort By</p>
-        <select onChange={(e) => {handleFilterChanges(e)}}>
-            <option value="name">Name</option>
-            <option value="base price">Base Price</option>
-        </select>
+          <button onClick={filterItems}>Search</button>
+        </div>
+        <div className = "temp">
+          <p> Sort By</p>
+          <select onChange={(e) => {handleFilterChanges(e)}}>
+              <option value="name">Name</option>
+              <option value="base price">Base Price</option>
+          </select>
+        </div>
     </div>
   );
 }

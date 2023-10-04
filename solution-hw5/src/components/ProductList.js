@@ -6,6 +6,7 @@ import Product from './Product';
 function ProductList(props) {
 
   return (
+    <>
       <div className="row">
         {props.products.map((product) => (
           <Product 
@@ -26,11 +27,12 @@ function ProductList(props) {
             totalPrice = {props.price} 
           />
         ))}
-        {(props.products.length == 0) && (
-          <h2>No match found!</h2>
+      </div>
+      {(props.products.length == 0) && (
+          <h2 className="reminder">No match found!</h2>
         )
         }
-      </div>
+    </>
   );
 }
 

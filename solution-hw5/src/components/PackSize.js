@@ -25,19 +25,19 @@ function PackSize(props) {
 
     <ul className="right-sec" onChange={(e) => handlePackSizeChanges(e)}>
         <li >  
-                <input type="radio" name={shortName} value="1" checked={selectedOption === '1'} onChange={handleOptionChange} id= {shortIdOne}/>
-                <label htmlFor={shortIdOne}> 1 </label>
+                <input type="radio" name={shortName} value="1"  onChange={handleOptionChange} id= {shortIdOne}/>
+                <label className={selectedOption === "1" ? "checked":""} htmlFor={shortIdOne}> 1 </label>
         </li>
-        <li >
-                <input type="radio" name={shortName} value="3" checked={selectedOption === '3'} onChange={handleOptionChange} id= {shortIdThree}/> 
+        <li className={selectedOption === "3" ? "checked":""} >
+                <input type="radio" name={shortName} value="3"  onChange={handleOptionChange} id= {shortIdThree}/> 
                 <label htmlFor={shortIdThree}> 3 </label>
         </li>
-        <li>
-                <input type="radio" name={shortName} value="5" checked={selectedOption === '5'} onChange={handleOptionChange} id= {shortIdSix}/>
+        <li className={selectedOption === "5" ? "checked":""} >
+                <input type="radio" name={shortName} value="5"  onChange={handleOptionChange} id= {shortIdSix}/>
                 <label htmlFor={shortIdSix}>6</label>
         </li>
-        <li>
-                <input type="radio" name={shortName} value="10" checked={selectedOption === '10'} onChange={handleOptionChange} id= {shortIdTwelve}/>
+        <li className={selectedOption === "10" ? "checked":""} >
+                <input type="radio" name={shortName} value="10" onChange={handleOptionChange} id= {shortIdTwelve}/>
                 <label htmlFor={shortIdTwelve}> 12 </label>
         </li>
     </ul>

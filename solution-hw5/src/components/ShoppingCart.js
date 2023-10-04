@@ -38,7 +38,7 @@ function ShoppingCart(props) {
                 ))}
             </div>
             {(props.product.length == 0) && (
-                <h2>No items in cart!</h2>
+                <h2 className="reminder">No items in cart!</h2>
             )
             }
         </>

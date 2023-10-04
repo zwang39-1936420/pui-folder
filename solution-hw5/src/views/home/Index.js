@@ -59,7 +59,6 @@ function Index() {
                 setCurrentCart = {setCurrentCart}
             />
             <main>
-                <hr></hr>
                 {/* Add state to control the list of product  */}
                 <SearchBar 
                     items={Rolls}
