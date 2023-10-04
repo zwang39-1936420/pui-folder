@@ -132,6 +132,10 @@ main {
   justify-self: center;
 }
 
+.cart-row{
+  grid-template-columns: repeat(5, 1fr);
+}
+
 .product {
   padding: 10px;
   width: 250px; 

@@ -8,7 +8,7 @@ function ShoppingCart(props) {
         props.product.forEach(element => {
             temp = temp + parseFloat(element.price);
         });
-        return temp;
+        return temp.toFixed(2);
     }
     // Function to add an element to the array
     const deleteElementInCart = ((indexToRemove) => {
@@ -23,7 +23,7 @@ function ShoppingCart(props) {
                 <p className = "summary" id = "numberOfItems">Shopping Cart: ({props.product.length} items)</p>
                 <p className = "summary" id = "totalPrice">Total: ${calculateTotalPrice()}</p>
             </div>
-            <div className="row">
+            <div className="row cart-row">
                 {props.product.map((product, index) => (
                     <ProductInCart 
                         key = {index}
