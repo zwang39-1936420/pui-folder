@@ -1,7 +1,9 @@
 import React from 'react';
 
 function ProductInCart(props) {
-
+  
+  // have a click listener to have a delete this section with 
+  
   return (
     
     <section className="product cart">
@@ -12,7 +14,7 @@ function ProductInCart(props) {
           <p>Price: ${props.currentPrice}</p>
 
           {/* This is the is the state update function that updates the [] in Index */}
-          <button >Remove</button>
+          <button onClick={() => {props.removeItem(props.id)}}>Remove</button>
     </section>
 
     

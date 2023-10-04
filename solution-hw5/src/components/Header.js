@@ -22,8 +22,6 @@ function Header(props) {
 
   let packSize = translator(props.size);
 
-
-
   return (
 
     <>
@@ -54,11 +52,12 @@ function Header(props) {
               </header>
           </div>
       </div>
-      
+
       {showReminder && (
         <>
           <hr></hr>
           <ShoppingCart
+            setCurrentCart = {props.setCurrentCart}
             product={props.cart}
             count = {props.count}
             totalPrice = {props.price}

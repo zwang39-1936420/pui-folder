@@ -11,10 +11,9 @@ function ProductList(props) {
           <Product 
             key={product.id}
             count = {props.count} 
-            dummie = {props.dummie} 
             glazing = {props.glazing} 
             imageSrc = {product.imageSrc}
-            product={product}     
+            product={product} 
             setCount = {props.setCount} 
             setType = {props.setType} 
             setGlaze = {props.setGlaze} 
@@ -22,12 +21,15 @@ function ProductList(props) {
             setTotalPrice = {props.setPrice} 
             setCopy = {props.setCopy}
             setCart = {props.setCart}
-            setCounter = {props.setDummieCounter}
             size = {props.size} 
             timer = {props.timer}
             totalPrice = {props.price} 
           />
         ))}
+        {(props.products.length == 0) && (
+          <h2>No match found!</h2>
+        )
+        }
       </div>
   );
 }

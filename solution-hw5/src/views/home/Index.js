@@ -5,12 +5,12 @@ import SearchBar from '../../components/SearchBar';
 
 function Index() {
     const Rolls = [
-        { id: 1, type: "Original", price: 2.49, glazing: "Keep Original", packSize: 1, imageSrc: "./assets/products/original-cinnamon-roll.jpg" },
-        { id: 2, type: "Apple", price: 3.49, glazing: "Keep Original", packSize: 1, imageSrc: "./assets/products/apple-cinnamon-roll.jpg" },
-        { id: 3, type: "Raisin", price: 2.99, glazing: "Keep Original", packSize: 1, imageSrc: "./assets/products/raisin-cinnamon-roll.jpg" },
-        { id: 4, type: "Walnut", price: 3.49, glazing: "Keep Original", packSize: 1, imageSrc: "./assets/products/walnut-cinnamon-roll.jpg" },
-        { id: 5, type: "Double-Chocolate", price: 3.99, glazing: "Keep Original", packSize: 1, imageSrc: "./assets/products/double-chocolate-cinnamon-roll.jpg" },
-        { id: 6, type: "Strawberry", price: 3.99, glazing: "Keep Original", packSize: 1, imageSrc: "./assets/products/strawberry-cinnamon-roll.jpg" },
+        { id: 1, type: "Original", name: "Original Cinnamon Roll", price: 2.49, glazing: "Keep Original", packSize: 1, imageSrc: "./assets/products/original-cinnamon-roll.jpg" },
+        { id: 2, type: "Apple",name: "Apple Cinnamon Roll",  price: 3.49, glazing: "Keep Original", packSize: 1, imageSrc: "./assets/products/apple-cinnamon-roll.jpg" },
+        { id: 3, type: "Raisin",name: "Raisin Cinnamon Roll",  price: 2.99, glazing: "Keep Original", packSize: 1, imageSrc: "./assets/products/raisin-cinnamon-roll.jpg" },
+        { id: 4, type: "Walnut",name: "Walnut Cinnamon Roll",  price: 3.49, glazing: "Keep Original", packSize: 1, imageSrc: "./assets/products/walnut-cinnamon-roll.jpg" },
+        { id: 5, type: "Double-Chocolate",name: "Double-Chocolate Cinnamon Roll",  price: 3.99, glazing: "Keep Original", packSize: 1, imageSrc: "./assets/products/double-chocolate-cinnamon-roll.jpg" },
+        { id: 6, type: "Strawberry",name: "Strawberry Cinnamon Roll",  price: 3.99, glazing: "Keep Original", packSize: 1, imageSrc: "./assets/products/strawberry-cinnamon-roll.jpg" },
     ];
 
 
@@ -25,15 +25,10 @@ function Index() {
     const [totalPrice, setTotalPrice] = useState(0.0);
     const [copyCurrentPrice, setCopyCurrentPrice] = useState(0.0);
     const [currentCount, setCount] = useState(0.0);
-    const [dummieCounter, setDummieCounter] = useState(0);
     const [timerId, setTimerId] = useState(null);
-    const [filteredItems, setFilteredItems] = useState();
+    const [currentList, setFilteredItems] = useState(Rolls);
 
-    // // Function to add an element to the array
-    // const addElementToCart = (id, type, glazing, size, price) => {
-    //     const newElement = { id : id, type: type, glazing: glazing, size: size, price: price}; 
-    //     setMyArray(prevArray => [...prevArray, newElement]);
-    //   };
+
 
     const startTimer = () => {
         // Clear any existing timeout (if it exists)
@@ -61,13 +56,18 @@ function Index() {
                 currentPrice = {copyCurrentPrice} 
                 count={currentCount} 
                 cart = {currentCart}
+                setCurrentCart = {setCurrentCart}
             />
             <main>
                 <hr></hr>
                 {/* Add state to control the list of product  */}
-                <SearchBar items={Rolls} /> 
+                <SearchBar 
+                    items={Rolls}
+                    setFilteredItems = {setFilteredItems} 
+                /> 
+
                 <ProductList 
-                    products={Rolls} 
+                    products={currentList} 
                     size={currentPackSize} 
                     glazing={currentGlazing} 
                     price={totalPrice} 
@@ -80,8 +80,6 @@ function Index() {
                     setCopy={setCopyCurrentPrice} 
                     setCart = {setCurrentCart}
                     timer = {startTimer}
-                    dummie = {dummieCounter}
-                    setDummieCounter = {setDummieCounter}
                 />
             </main>
             <footer>

@@ -3,7 +3,7 @@ import Glazing from './Glazings';
 import PackSize from './PackSize';
 
 
-function Product({key, imageSrc, product, totalPrice, count, size, timer, glazing, setType, setGlaze, setSize, setTotalPrice, setCount, setCopy, setCart, dummie, setCounter}) {
+function Product({ imageSrc, product, totalPrice, count, size, timer, glazing, setType, setGlaze, setSize, setTotalPrice, setCount, setCopy, setCart}) {
 
   const glazings = [
     { option:"Keep Original", adaption: 0},
@@ -11,14 +11,16 @@ function Product({key, imageSrc, product, totalPrice, count, size, timer, glazin
     { option:"Vanilla Milk", adaption: 0.5},
     { option:"Double Chocolate", adaption: 1.5},
   ];
+
   const pack_size = [
     { option:"1", adaption: 1},
     { option:"3", adaption: 3},
     { option:"6", adaption: 5},
     { option:"12", adaption: 10},
   ];
+
   const translator = (number) => {
-    let temp = ""; 
+    let temp = 0.0; 
     pack_size.forEach( pack => {
       if(pack.adaption == number){
         temp = pack.option;
@@ -39,8 +41,7 @@ function Product({key, imageSrc, product, totalPrice, count, size, timer, glazin
     setCount(count+1);
     timer();
     setType(product.type);
-    setCounter(dummie + 1);
-    const newElement = { id: dummie, imageSrc: imageSrc, type: product.type, glazing: glazing, size: translator(size), price: price}; 
+    const newElement = { imageSrc: imageSrc, type: product.type, glazing: currentGlazing, size: translator(currentPackSize), price: price}; 
     setCart(prevArray => [...prevArray, newElement]);
   };
 
@@ -59,10 +60,10 @@ function Product({key, imageSrc, product, totalPrice, count, size, timer, glazin
   useEffect(() => {
     // This code runs after each render, including when state changes
     glazings.forEach( glaze => {
-    if(glaze.option.toLowerCase() == currentGlazing.toLowerCase()){
-      setCurrentPackSize(currentPackSize);
-      setPrice((currentPackSize * (glaze.adaption  + product.price)).toFixed(2));
-    }
+      if(glaze.option.toLowerCase() == currentGlazing.toLowerCase()){
+        setCurrentPackSize(currentPackSize);
+        setPrice((currentPackSize * (glaze.adaption  + product.price)).toFixed(2));
+      }
     })    
   }, [currentPackSize]);
 

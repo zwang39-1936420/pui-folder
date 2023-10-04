@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 
-function SearchBar({ items }) {
+function SearchBar({ items, setFilteredItems}) {
   const [searchTerm, setSearchTerm] = useState('');
   const [returnedItems, setReturnedItems] = useState(items);
   
@@ -8,17 +8,21 @@ function SearchBar({ items }) {
   // Filtering logic
     const filterItems = () => {
         const filtered = items.filter((item) =>
-        item.type.toLowerCase().includes(searchTerm.toLowerCase())
+          item.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
-        setReturnedItems(filtered);
+       setReturnedItems(filtered);
     };
 
     const handleFilterChanges = (e) => {
         const filteredList = (e.target.value == "name") ? (
-            console.log(sortByNameAscending(items))
-        ):( console.log(sortByPrice(items)));
-
+          sortByNameAscending(returnedItems)):( sortByPrice(returnedItems));
+        setReturnedItems(filteredList);
     }
+
+    useEffect (() => {
+      setFilteredItems(returnedItems);
+    }
+    ,[returnedItems])
     
     function sortByNameAscending(items) {
         return items.slice().sort((a, b) => {
