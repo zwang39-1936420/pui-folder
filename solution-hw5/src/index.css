@@ -152,7 +152,27 @@ main {
 }
 
 .cart{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
   width: 150px;
+}
+
+.cart > p {
+  margin-top: 5px;
+}
+
+.cart > button {
+  margin-top: 20px;
+  border: white;
+  text-decoration: underline;
+  background-color: white;
+}
+
+.cart-display{
+  font-weight: bold;
 }
 
 .desc {
