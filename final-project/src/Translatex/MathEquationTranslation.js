@@ -27,27 +27,27 @@ function MathEquationTranslation() {
 
   useEffect(() => {
     // Set the Latex Output
-    if (responseText != ''){
+    if (responseText !== ''){
       setLatexContent(responseText.latex_styled);
     } 
   }, [responseText]);
 
-  const getAToken = async () => {
-    url = "https://api.mathpix.com/v3/app-tokens"
+  // const getAToken = async () => {
+  //   const url = "https://api.mathpix.com/v3/app-tokens"
 
-    const response = await fetch('https://api.mathpix.com/v3/app-tokens', {
-        method: 'POST',
-        headers: {
-          'app_key': '73a1fa037d5c782c76d7a64d78a8421516fdd44fbfa8cbac02fc2a9dc6a682d0',
-        },
-      });
+  //   const response = await fetch('https://api.mathpix.com/v3/app-tokens', {
+  //       method: 'POST',
+  //       headers: {
+  //         'app_key': '73a1fa037d5c782c76d7a64d78a8421516fdd44fbfa8cbac02fc2a9dc6a682d0',
+  //       },
+  //     });
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const responseData = await response.json();
-      return responseData;
-  }
+  //     if (!response.ok) {
+  //       throw new Error('Network response was not ok');
+  //     }
+  //     const responseData = await response.json();
+  //     return responseData;
+  // }
 
   const handlePostRequest = async () => {
     try {
