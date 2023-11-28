@@ -44,28 +44,17 @@ function MathEquationTranslation() {
     } 
   }, [responseText]);
 
-  // const getAToken = async () => {
-  //   const url = "https://api.mathpix.com/v3/app-tokens"
+  //Fetch a token in initial rendering.
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  //   const response = await fetch('https://api.mathpix.com/v3/app-tokens', {
-  //       method: 'POST',
-  //       headers: {
-  //         'app_key': '73a1fa037d5c782c76d7a64d78a8421516fdd44fbfa8cbac02fc2a9dc6a682d0',
-  //       },
-  //     });
-
-  //     if (!response.ok) {
-  //       throw new Error('Network response was not ok');
-  //     }
-  //     const responseData = await response.json();
-  //     return responseData;
-  // }
 
   const handlePostRequest = async () => {
     try {
 
       fetchData();
-      console.log(token)
+      console.log(token);
       const formData = new FormData();
       formData.append('file', document.getElementById('fileInput').files[0]);
 
@@ -76,21 +65,21 @@ function MathEquationTranslation() {
 
       formData.append('options_json', JSON.stringify(options));
       
-      const response = await fetch('https://api.mathpix.com/v3/text', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'app_token': token,
-        },
-      });
+      // const response = await fetch('https://api.mathpix.com/v3/text', {
+      //   method: 'POST',
+      //   body: formData,
+      //   headers: {
+      //     'app_token': token,
+      //   },
+      // });
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
+      // if (!response.ok) {
+      //   throw new Error('Network response was not ok');
+      // }
 
-      const responseData = await response.json();
-      setResponseText(responseData);
-      console.log(responseData);
+      // const responseData = await response.json();
+      // setResponseText(responseData);
+      // console.log(responseData);
     } catch (error) {
       console.error('Error during POST request:', error);
     }
