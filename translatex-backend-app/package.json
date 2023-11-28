@@ -1,12 +1,13 @@
 {
+  "homepage": "https://zwang39-1936420.github.io/pui-folder",
   "name": "translatex-backend-app",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b gh-pages -e final-project"
+    "predeploy": "node server.js",
+    "deploy": "gh-pages -b gh-pages -e translatex-backend-app",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +19,6 @@
   },
   "devDependencies": {
     "gh-pages": "^6.1.0"
-  }
+  },
+  "description": ""
 }
