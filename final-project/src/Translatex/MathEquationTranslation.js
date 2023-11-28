@@ -10,7 +10,19 @@ function MathEquationTranslation() {
   const [responseText, setResponseText] = useState('');
   const [latexContent, setLatexContent] = useState('E=mc^2');
   const [selectedFile, setSelectedFile] = useState(null);
+  const [token, setToken] = useState('');
 
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:5001/api/data');
+      const result = await response.json();
+      setToken(result.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  
   const handleFileChange = (event) => {
     const file = event.target.files[0];
 
@@ -51,6 +63,9 @@ function MathEquationTranslation() {
 
   const handlePostRequest = async () => {
     try {
+
+      fetchData();
+      console.log(token)
       const formData = new FormData();
       formData.append('file', document.getElementById('fileInput').files[0]);
 
@@ -65,8 +80,7 @@ function MathEquationTranslation() {
         method: 'POST',
         body: formData,
         headers: {
-          'app_id': 'eddie_edd673_50f656',
-          'app_key': '73a1fa037d5c782c76d7a64d78a8421516fdd44fbfa8cbac02fc2a9dc6a682d0',
+          'app_token': token,
         },
       });
 
