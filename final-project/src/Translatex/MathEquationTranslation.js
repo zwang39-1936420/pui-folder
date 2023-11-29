@@ -14,7 +14,7 @@ function MathEquationTranslation() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://fast-sea-41732-9e4c365c27a2.herokuapp.com/api/data');
+      const response = await fetch('https://translatex-backend-app-3dae282219b5.herokuapp.com/api/data');
       const result = await response.json();
       setToken(result.data);
     } catch (error) {
