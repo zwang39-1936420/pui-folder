@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/pui-folder/static/css/main.16ad7782.css",
-    "main.js": "/pui-folder/static/js/main.668fa3f5.js",
-    "static/js/787.0fe84981.chunk.js": "/pui-folder/static/js/787.0fe84981.chunk.js",
-    "index.html": "/pui-folder/index.html",
-    "main.16ad7782.css.map": "/pui-folder/static/css/main.16ad7782.css.map",
-    "main.668fa3f5.js.map": "/pui-folder/static/js/main.668fa3f5.js.map",
-    "787.0fe84981.chunk.js.map": "/pui-folder/static/js/787.0fe84981.chunk.js.map"
+    "main.css": "/pui-folder/final-project/static/css/main.16ad7782.css",
+    "main.js": "/pui-folder/final-project/static/js/main.768fcbdc.js",
+    "static/js/787.0fe84981.chunk.js": "/pui-folder/final-project/static/js/787.0fe84981.chunk.js",
+    "index.html": "/pui-folder/final-project/index.html",
+    "main.16ad7782.css.map": "/pui-folder/final-project/static/css/main.16ad7782.css.map",
+    "main.768fcbdc.js.map": "/pui-folder/final-project/static/js/main.768fcbdc.js.map",
+    "787.0fe84981.chunk.js.map": "/pui-folder/final-project/static/js/787.0fe84981.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.16ad7782.css",
-    "static/js/main.668fa3f5.js"
+    "static/js/main.768fcbdc.js"
   ]
 }
