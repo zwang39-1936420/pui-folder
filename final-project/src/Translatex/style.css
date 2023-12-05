@@ -32,6 +32,10 @@ body, h1, h2, h3, p, margin, padding, ul, li {
     font-weight: bold;
   }
   
+  #headline {
+    margin-top: 20px;
+  }
+
   .nav-links {
     display: flex;
     align-items: center;

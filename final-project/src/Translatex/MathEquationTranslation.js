@@ -65,21 +65,21 @@ function MathEquationTranslation() {
 
       formData.append('options_json', JSON.stringify(options));
       
-      // const response = await fetch('https://api.mathpix.com/v3/text', {
-      //   method: 'POST',
-      //   body: formData,
-      //   headers: {
-      //     'app_token': token,
-      //   },
-      // });
+      const response = await fetch('https://api.mathpix.com/v3/text', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'app_token': token,
+        },
+      });
 
-      // if (!response.ok) {
-      //   throw new Error('Network response was not ok');
-      // }
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
 
-      // const responseData = await response.json();
-      // setResponseText(responseData);
-      // console.log(responseData);
+      const responseData = await response.json();
+      setResponseText(responseData);
+      console.log(responseData);
     } catch (error) {
       console.error('Error during POST request:', error);
     }
@@ -92,12 +92,13 @@ function MathEquationTranslation() {
       <nav className="navbar">
         <div className="logo">Translatex</div>
         <div className="nav-links">
-          <a href="#" className="history-link">History</a>
-          <button className="documentation-btn">Documentation</button>
+          {/* <a href="#" className="history-link">History</a>
+          <button className="documentation-btn">Documentation</button> */}
         </div>
       </nav>
 
       <h1>TransLatex, Your Math Career saver</h1>
+      <p id="headline">Upload equations you want to translate into Latex format!</p>
 
       <div className="main-content">
         <div className="input">
