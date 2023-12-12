@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import delete_X from '../assets/Delete X.png';
 import CopyToClipboardButton from './CopyToClipboardButton';
+import LatexCopyButton from './CopyImageToClipboardButton.js';
+import FileUploadArea from './FileUploadArea';
 import './style.css';
 
 function MathEquationTranslation() {
@@ -10,6 +11,7 @@ function MathEquationTranslation() {
   const [responseText, setResponseText] = useState('');
   const [latexContent, setLatexContent] = useState('E=mc^2');
   const [selectedFile, setSelectedFile] = useState(null);
+  const [isDragOver, setIsDragOver] = useState(false);
   const [token, setToken] = useState('');
 
   const fetchData = async () => {
@@ -22,15 +24,6 @@ function MathEquationTranslation() {
     }
   };
 
-  
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-
-    if (file) {
-      // Update state with the selected file
-      setSelectedFile(file);
-    }
-  };
 
   const handleFileRemove = () => {
     // Remove the selected file by updating state to null
@@ -56,7 +49,7 @@ function MathEquationTranslation() {
       fetchData();
       console.log(token);
       const formData = new FormData();
-      formData.append('file', document.getElementById('fileInput').files[0]);
+      formData.append('file', selectedFile);
 
       const options = {
         math_inline_delimiters: ['$', '$'],
@@ -92,8 +85,7 @@ function MathEquationTranslation() {
       <nav className="navbar">
         <div className="logo">Translatex</div>
         <div className="nav-links">
-          {/* <a href="#" className="history-link">History</a>
-          <button className="documentation-btn">Documentation</button> */}
+          <button className="documentation-btn">History</button>
         </div>
       </nav>
 
@@ -101,38 +93,14 @@ function MathEquationTranslation() {
       <p id="headline">Upload equations you want to translate into Latex format!</p>
 
       <div className="main-content">
-        <div className="input">
-          { selectedFile ? (          
-            <label className="upload-lab">
-              Change file
-              <input
-                type="file"
-                id="fileInput"
-                onChange={handleFileChange}
-                accept="image/*"
-              />
-            </label>) : (
-            <label className="upload-lab">
-              Upload file
-              <input
-                type="file"ß
-                id="fileInput"
-                onChange={handleFileChange}
-                accept="image/*"
-              />
-            </label>)}
-          {selectedFile && <button className="upload-btn" onClick={handlePostRequest}>Submit</button>}
-        </div>
-
-        {selectedFile && (
-          <div className='preview'>
-            <div>
-              <p>Selected Image:</p>
-              <img className='delete' src = {delete_X} onClick={handleFileRemove}/>
-            </div>
-            <img className='preview_img' src={URL.createObjectURL(selectedFile)} alt="Selected" />
-          </div>
-        )}
+        <FileUploadArea 
+          selectedFile={selectedFile}
+          setSelectedFile={setSelectedFile}
+          handlePostRequest={handlePostRequest}
+          isDragOver={isDragOver}
+          setIsDragOver={setIsDragOver}
+          handleFileRemove={handleFileRemove}
+        />
 
         <div className="output">
           <div className="text-box-container">
@@ -144,6 +112,7 @@ function MathEquationTranslation() {
             <div className='latexOutput'>
                 <p>LaTeX formula preview: </p>
                 <Latex>{`$${latexContent}$`}</Latex>
+                <LatexCopyButton latexCode = {responseText.text}></LatexCopyButton >
             </div>
           </div>
         </div>

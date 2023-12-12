@@ -1,53 +1,58 @@
-// This is a failed attempt to export translated Latex as PNG file. 
+import React, { useState, useRef } from 'react';
+import { InlineMath } from 'react-katex';
+import * as htmlToImage from 'html-to-image';
+import ClipboardJS from 'clipboard';
 
-import React, { useRef } from 'react';
-import 'katex/dist/katex.min.css';
-import html2canvas from 'html2canvas';
+function LatexCopyButton(props) {
+  const [latex, setLatex] = useState(props.latexcode);
+  const latexContainerRef = useRef(null);
+  const [showReminder, setShowReminder] = useState(false);
 
-const CopyLatexToClipboardButton = ({ latexCode }) => {
-  const imageRef = useRef(null);
+  const handleCopy = () => {
+    const node = latexContainerRef.current;
 
-  const handleCopyClick = async () => {
-    try {
-      // const imageDataUrl = await convertLatexToImage(latexCode);
-      // copyImageToClipboard(imageDataUrl);
-    } catch (error) {
-      console.error('Error converting LaTeX to image:', error);
-    }
-  };
+    // Convert the LaTeX container to an image
+    htmlToImage.toPng(node)
+      .then((dataUrl) => {
+        // Copy the image to the clipboard
+        const clipboard = new ClipboardJS('.copy-button', {
+          text: () => dataUrl,
+        });
 
-  const captureImage = () => {
-    const node = document.getElementById('latex-container');
+        clipboard.on('success', (e) => {
+          console.log('Image copied to clipboard:', e.text);
+          clipboard.destroy();
+        });
 
-    html2canvas(node).then((canvas) => {
-      const imageData = canvas.toDataURL('image/png');
-      console.log(imageData);
-    });
-  };
+        clipboard.on('error', (e) => {
+          console.error('Failed to copy image:', e.action);
+          clipboard.destroy();
+        });
 
-  const copyImageToClipboard = (imageDataUrl) => {
-    if (imageRef.current) {
-      imageRef.current.src = imageDataUrl;
-
-      // Create a temporary input element to hold the image URL
-      const tempInput = document.createElement('input');
-      tempInput.setAttribute('type', 'text');
-      tempInput.setAttribute('value', imageDataUrl);
-      document.body.appendChild(tempInput);
-
-      // Select and copy the image URL to the clipboard
-      tempInput.select();
-      document.execCommand('copy');
-      document.body.removeChild(tempInput);
-    }
+        // Trigger the copy button click
+        const copyButton = document.getElementById('copyButton');
+        copyButton.click();
+      })
+      .catch((error) => {
+        console.error('Failed to convert LaTeX to image:', error);
+      });
   };
 
   return (
     <div>
-      <button onClick={captureImage}>Copy LaTeX as PNG</button>
-      <img className="copy-btn" ref={imageRef} alt="LaTeX as PNG" style={{ display: 'none' }} />
+      <div className ="hide-latex" ref={latexContainerRef}>
+        <InlineMath>{latex}</InlineMath>
+      </div>
+      <button id="copyButton" className="copy-btn" onClick={handleCopy}>
+        Copy LaTeX as Image
+      </button>
+      {showReminder && (
+        <div className='copy-text'>
+          Copied to clipboard
+        </div>
+      )}
     </div>
   );
 };
 
-export default CopyLatexToClipboardButton;
+export default LatexCopyButton;
