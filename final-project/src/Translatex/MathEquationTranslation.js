@@ -10,7 +10,6 @@ function MathEquationTranslation() {
   var Latex = require('react-latex');
   const ifHasLocalStorage = () => {
     if(localStorage.getItem("history")){
-        console.log(JSON.parse(localStorage.getItem("history")));
         return JSON.parse(localStorage.getItem("history"));
     } 
     return [];
@@ -18,6 +17,8 @@ function MathEquationTranslation() {
 
   const [responseText, setResponseText] = useState('');
   const [latexContent, setLatexContent] = useState('E=mc^2');
+  const [timerId, setTimerId] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [isDragOver, setIsDragOver] = useState(false);
   const [token, setToken] = useState('');
@@ -34,6 +35,19 @@ function MathEquationTranslation() {
       console.error('Error fetching data:', error);
     }
   };
+
+  useEffect(() => {
+    // Clear any existing timeout (if it exists)
+    if (timerId) {
+      clearTimeout(timerId);
+    }
+    const newTimerId = setTimeout(() => {
+      setErrorMessage('');
+    }, 3000); // 3 seconds
+
+    // Store the new timeout ID in state
+    setTimerId(newTimerId);
+  }, [errorMessage]);
 
 
   const handleFileRemove = () => {
@@ -80,11 +94,15 @@ function MathEquationTranslation() {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-
       const responseData = await response.json();
-      setResponseText(responseData);
-      setHistory([responseData.latex_styled, ...history]);
-      console.log(responseData);
+      if (!responseData.error_info) {
+        setResponseText(responseData);
+        setHistory([responseData.latex_styled, ...history]);
+        console.log(responseData);
+      } else {
+        setErrorMessage('Error: ' + responseData.error_info["message"] + "please  try  again!");
+      }
+
     } catch (error) {
       console.error('Error during POST request:', error);
     }
@@ -128,6 +146,7 @@ function MathEquationTranslation() {
             <div className='latexOutput'>
                 <p>LaTeX formula preview: </p>
                 <Latex>{`$${latexContent}$`}</Latex>
+                <p>{errorMessage}</p>
             </div>
           </div>
         </div>
