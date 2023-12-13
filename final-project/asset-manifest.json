@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pui-folder/final-project/static/css/main.7a2e7bf9.css",
+    "main.css": "/pui-folder/final-project/static/css/main.eefa76a6.css",
     "main.js": "/pui-folder/final-project/static/js/main.5257f45a.js",
     "static/js/787.0fe84981.chunk.js": "/pui-folder/final-project/static/js/787.0fe84981.chunk.js",
     "static/media/KaTeX_AMS-Regular.ttf": "/pui-folder/final-project/static/media/KaTeX_AMS-Regular.853be92419a6c3766b9a.ttf",
@@ -64,12 +64,12 @@
     "static/media/KaTeX_Size3-Regular.woff": "/pui-folder/final-project/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/pui-folder/final-project/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/pui-folder/final-project/index.html",
-    "main.7a2e7bf9.css.map": "/pui-folder/final-project/static/css/main.7a2e7bf9.css.map",
+    "main.eefa76a6.css.map": "/pui-folder/final-project/static/css/main.eefa76a6.css.map",
     "main.5257f45a.js.map": "/pui-folder/final-project/static/js/main.5257f45a.js.map",
     "787.0fe84981.chunk.js.map": "/pui-folder/final-project/static/js/787.0fe84981.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7a2e7bf9.css",
+    "static/css/main.eefa76a6.css",
     "static/js/main.5257f45a.js"
   ]
 }
