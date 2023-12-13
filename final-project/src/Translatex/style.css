@@ -49,7 +49,7 @@ body, h1, h2, h3, p, margin, padding, ul, li {
   }
   
   .documentation-btn {
-    background-color: #0086D5;
+    background-color: #0077cc;
     color: #fff;
     border: none;
     padding: 8px 15px;
@@ -84,7 +84,7 @@ body, h1, h2, h3, p, margin, padding, ul, li {
   }
 
   .upload-btn:hover {
-    background: #005c92; 
+    background: #0077cc; 
     color: white;
     transition: background-color 0.3s ease;
   }
@@ -129,7 +129,7 @@ body, h1, h2, h3, p, margin, padding, ul, li {
 
   .upload-btn {
     margin-top: 40px;
-    background-color: #0086D5;
+    background-color: #0077cc;
     color: white;
     border: none;
     width: 300px;
@@ -140,8 +140,8 @@ body, h1, h2, h3, p, margin, padding, ul, li {
   }
 
   .upload-lab.drag-over {
-    color: #4285f4;
-    border: 2px solid #4285f4; /* Change the color for the dotted border when dragging over */
+    color: #0077cc;
+    border: 2px solid #0077cc; /* Change the color for the dotted border when dragging over */
   }
 
   .preview{
@@ -178,7 +178,7 @@ body, h1, h2, h3, p, margin, padding, ul, li {
     justify-content: center;
     align-items: center;
     position: relative;
-    border: 1px solid #0086D5;
+    border: 1px solid #0077cc;
     width: 300px;
     height: 200px;
     padding: 20px;
@@ -213,7 +213,7 @@ body, h1, h2, h3, p, margin, padding, ul, li {
     position: absolute;
     top: 20px;
     right: 20px;
-    background-color: #0086D5;
+    background-color: #0077cc;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -261,7 +261,7 @@ body, h1, h2, h3, p, margin, padding, ul, li {
   }
 
   .upload-btn:hover {
-    background: #005c92; 
+    background: #0077cc; 
     color: white;
     transition: background-color 0.3s ease;
   }
@@ -312,7 +312,7 @@ body, h1, h2, h3, p, margin, padding, ul, li {
 
   .upload-btn {
     margin-top: 5px;
-    background-color: #0086D5;
+    background-color: #0077cc;
     color: white;
     border: none;
     width: 100%;
@@ -356,7 +356,7 @@ body, h1, h2, h3, p, margin, padding, ul, li {
     justify-content: center;
     align-items: center;
     position: relative;
-    border: 1px solid #0086D5;
+    border: 1px solid #0077cc;
     width: 75%;
     max-width: 75%;
     min-height: 200px;
@@ -393,7 +393,7 @@ body, h1, h2, h3, p, margin, padding, ul, li {
     position: relative;
     top: 0;
     right: 0;
-    background-color: #0086D5;
+    background-color: #0077cc;
     color: white;
     border: none;
     padding: 10px 15px;

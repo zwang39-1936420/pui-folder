@@ -24,6 +24,7 @@ const CopyToClipboardButton = ({ textToCopy, textOnButton, buttonClass }) => {
         ref={textAreaRef}
         value={textToCopy}
         style={{ position: 'absolute', left: '-9999px' }}
+        aria-label="invisible textarea for copying text"
         readOnly
       />
       <button className={buttonClass} onClick={handleCopyClick}>{textOnButton}</button>
