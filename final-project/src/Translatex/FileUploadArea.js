@@ -11,29 +11,6 @@ function FileUploadArea(props) {
   const [src, setSrc] = useState(null);
   const [crop, setCrop] = useState({ aspect: 16 / 9 });
 
-  const handleDragEnter = () => {
-    props.setIsDragOver(true);
-  };
-
-  const handleDragLeave = () => {
-    props.setIsDragOver(false);
-  };
-
-  const handleDrop = (event) => {
-    event.preventDefault();
-    props.setIsDragOver(false);
-
-    // Handle the dropped files here
-    const files = event.dataTransfer.files;
-    if (files[0]) {
-      // Update state with the selected file
-      props.setSelectedFile(files[0]);
-      setPopupOpen(true);
-      setSrc(URL.createObjectURL(files[0]));
-    }
-    console.log('Dropped files:', files);
-  };
-
   const handleFileChange = (event) => {
     const file = event.target.files[0];
 
@@ -44,10 +21,6 @@ function FileUploadArea(props) {
       setPopupOpen(true);
       setSrc(URL.createObjectURL(file));
     }
-  };
-
-  const preventDefault = (event) => {
-    event.preventDefault();
   };
 
   const openPopup = () => {
@@ -83,15 +56,12 @@ function FileUploadArea(props) {
             </div>
           </div>) : (
           <label className={`upload-lab`}>
+            <img className='upload_img' src="https://img.icons8.com/ios/50/000000/upload--v1.png" alt="Upload" />
             Upload file
             <input
               type="file"ß
               id="fileInput"
               onChange={handleFileChange}
-              onDragEnter={handleDragEnter}
-              onDragOver={preventDefault}
-              onDragLeave={handleDragLeave}
-              onDrop={handleDrop}
               accept="image/*"
             />
           </label>)}

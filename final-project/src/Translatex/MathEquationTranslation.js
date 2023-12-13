@@ -1,18 +1,29 @@
 import React, {useState, useEffect} from 'react';
 import CopyToClipboardButton from './CopyToClipboardButton';
 import LatexCopyButton from './CopyImageToClipboardButton.js';
+import TranslationHistory from './TranslationHistory.js';
 import FileUploadArea from './FileUploadArea';
 import './style.css';
 
 function MathEquationTranslation() {
 
   var Latex = require('react-latex');
+  const ifHasLocalStorage = () => {
+    if(localStorage.getItem("history")){
+        console.log(JSON.parse(localStorage.getItem("history")));
+        return JSON.parse(localStorage.getItem("history"));
+    } 
+    return [];
+    }
 
   const [responseText, setResponseText] = useState('');
   const [latexContent, setLatexContent] = useState('E=mc^2');
   const [selectedFile, setSelectedFile] = useState(null);
   const [isDragOver, setIsDragOver] = useState(false);
   const [token, setToken] = useState('');
+  const [history, setHistory] = useState(ifHasLocalStorage());
+
+
 
   const fetchData = async () => {
     try {
@@ -72,6 +83,7 @@ function MathEquationTranslation() {
 
       const responseData = await response.json();
       setResponseText(responseData);
+      setHistory([responseData.latex_styled, ...history]);
       console.log(responseData);
     } catch (error) {
       console.error('Error during POST request:', error);
@@ -85,7 +97,11 @@ function MathEquationTranslation() {
       <nav className="navbar">
         <div className="logo">Translatex</div>
         <div className="nav-links">
-          <button className="documentation-btn">History</button>
+          {/* <button className="documentation-btn">History</button> */}
+          <TranslationHistory 
+            history = {history}
+            setHistory = {setHistory}
+          ></TranslationHistory>
         </div>
       </nav>
 
@@ -105,7 +121,7 @@ function MathEquationTranslation() {
         <div className="output">
           <div className="text-box-container">
             <p className='output-text'>{responseText.latex_styled}</p>
-            <CopyToClipboardButton textToCopy = {responseText.latex_styled}></CopyToClipboardButton>
+            <CopyToClipboardButton textToCopy = {responseText.latex_styled} buttonClass={"copy-btn"} textOnButton={"Copy"}></CopyToClipboardButton>
           </div>
 
           <div className="text-box-container">
