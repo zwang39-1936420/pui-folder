@@ -112,7 +112,6 @@ function MathEquationTranslation() {
             <div className='latexOutput'>
                 <p>LaTeX formula preview: </p>
                 <Latex>{`$${latexContent}$`}</Latex>
-                <LatexCopyButton latexCode = {responseText.text}></LatexCopyButton >
             </div>
           </div>
         </div>

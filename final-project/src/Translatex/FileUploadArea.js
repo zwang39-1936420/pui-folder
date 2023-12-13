@@ -1,10 +1,8 @@
 import React, {useState}from 'react';
-import delete_X from '../assets/Delete X.png';
 import './ImageUploadPopup.css';
 import './ImageUploadAndCropPopup.js'
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
-import ImageUploadAndCropPopup from './ImageUploadAndCropPopup.js';
 
 
 function FileUploadArea(props) {
@@ -80,7 +78,6 @@ function FileUploadArea(props) {
               <button className="gen-button" onClick={props.handleFileRemove}>X</button>
               <div onClick={openPopup}>
                 <p>Selected Image:</p>
-                {/* <img className='delete' src = {delete_X} onClick={props.handleFileRemove}/> */}
                 <img className='preview_img' src={URL.createObjectURL(props.selectedFile)} alt="Selected" />
               </div>
             </div>

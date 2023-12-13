@@ -1,18 +1,32 @@
-import React, { useState, useRef } from 'react';
-import { InlineMath } from 'react-katex';
+import React, { useRef, useEffect } from 'react';
+import katex from 'katex';
 import * as htmlToImage from 'html-to-image';
 import ClipboardJS from 'clipboard';
 
-function LatexCopyButton(props) {
-  const [latex, setLatex] = useState(props.latexcode);
+import 'katex/dist/katex.min.css'; // Import KaTeX styles
+import 'clipboard/dist/clipboard.min.js'; // Import ClipboardJS styles
+
+const LatexToImageAndCopyButton = ({ latexCode }) => {
+  var Latex = require('react-latex');
   const latexContainerRef = useRef(null);
-  const [showReminder, setShowReminder] = useState(false);
+  const latexExpression = String(latexCode);
+
+  // Ensure latexExpression is a non-empty string before rendering
+  if (typeof latexExpression === 'string' && latexExpression.trim() !== '') {
+    try {
+      katex.render(latexCode, latexContainerRef.current, { displayMode: true });
+      console.log('KaTeX rendering successful:', latexExpression);
+    } catch (error) {
+      console.error('KaTeX rendering error:', error);
+    }
+  }
+
 
   const handleCopy = () => {
-    const node = latexContainerRef.current;
+    const latexContainer = latexContainerRef.current;
 
-    // Convert the LaTeX container to an image
-    htmlToImage.toPng(node)
+    // Use html-to-image to convert the HTML content to an image
+    htmlToImage.toPng(latexContainer, { useCORS: true, allowTaint: true, backgroundColor: 'white' })
       .then((dataUrl) => {
         // Copy the image to the clipboard
         const clipboard = new ClipboardJS('.copy-button', {
@@ -40,19 +54,12 @@ function LatexCopyButton(props) {
 
   return (
     <div>
-      <div className ="hide-latex" ref={latexContainerRef}>
-        <InlineMath>{latex}</InlineMath>
-      </div>
+      <Latex ref={latexContainerRef}>{`$${latexCode}$`}</Latex>
       <button id="copyButton" className="copy-btn" onClick={handleCopy}>
         Copy LaTeX as Image
       </button>
-      {showReminder && (
-        <div className='copy-text'>
-          Copied to clipboard
-        </div>
-      )}
     </div>
   );
 };
 
-export default LatexCopyButton;
+export default LatexToImageAndCopyButton;

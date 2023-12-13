@@ -149,6 +149,8 @@ body, h1, h2, h3, p, margin, padding, ul, li {
     flex-direction: column;
     align-items: flex-end;
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
     margin-right: 15px;
   }
 
