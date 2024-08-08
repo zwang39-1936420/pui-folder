@@ -57,40 +57,26 @@ function FileUploadArea(props) {
               </div>
             </div>
           </div>) : (
-          // <label class="flex flex-col items-center justify-center h-128 bg-gray-100 p-6 rounded-lg border border-dashed border-gray-300 hover:cursor-pointer">
-          //   <input
-          //     type="file"ß
-          //     id="fileInput"
-          //     onChange={handleFileChange}
-          //     accept="image/*"
-          //   />
-          //   <FiUpload className="text-gray-400 text-4xl mb-4" />
-          //   <p className="text-gray-600 mb-4">No files uploaded yet</p>
-          //   <button className="flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded">
-          //     <FiPlus className="mr-2" />
-          //     Upload File
-          //   </button>
-          // </label>)}
-          <label
-          htmlFor="fileInput"
-          className="flex flex-col items-center justify-center h-128 bg-gray-100 p-6 rounded-lg border border-dashed border-gray-300 hover:cursor-pointer relative"
-        >
-          <input
-            type="file"
-            id="fileInput"
-            onChange={handleFileChange}
-            accept="image/*"
-            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-          />
-          <FiUpload className="text-gray-400 text-4xl mb-4" />
-          <p className="text-gray-600 mb-4">No files uploaded yet</p>
           <label
             htmlFor="fileInput"
-            className="flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium rounded hover:cursor-pointer"
+            class="flex flex-col items-center justify-center w-full h-full bg-gray-100 p-6 rounded-lg border border-dashed border-gray-300 hover:cursor-pointer relative"
           >
-            <FiPlus className="mr-2" />
-            Upload File
-          </label>
+            <input
+              type="file"
+              id="fileInput"
+              onChange={handleFileChange}
+              accept="image/*"
+              class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+            />
+            <FiUpload className="text-gray-400 text-4xl mb-4" />
+            <p className="text-gray-600 mb-4">No files uploaded yet</p>
+            <label
+              htmlFor="fileInput"
+              className="flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium rounded hover:cursor-pointer"
+            >
+              <FiPlus className="mr-2" />
+              Upload File
+            </label>
         </label>)}
         {isPopupOpen && (
           <div className="image-popup">

@@ -131,34 +131,33 @@ function MathEquationTranslation() {
         <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">Upload equations you want to translate into Latex format!</p>
       </div>
 
-
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-20 text-center lg:pt-32">
-        <div class="flex flex-row items-center gap-x-2">
-          <FileUploadArea 
-            selectedFile={selectedFile}
-            setSelectedFile={setSelectedFile}
-            handlePostRequest={handlePostRequest}
-            isDragOver={isDragOver}
-            setIsDragOver={setIsDragOver}
-            handleFileRemove={handleFileRemove}
-          />
-
-          <div class="flex flex-col items-center gap-y-2">
-            <div class="relative w-96 h-64 border border-indigo-600 rounded-lg">
-              <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">{responseText.latex_styled}</p>
-              <CopyToClipboardButton textToCopy = {responseText.latex_styled} buttonClass={"copy-btn"} textOnButton={"Copy"}></CopyToClipboardButton>
+      <div class="mx-auto flex h-1/2screen w-full items-center justify-center max-w-5xl px-4 sm:px-6 lg:px-8 rounded-lg bg-white pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5" >
+        {/* <div class="flex flex-row gap-x-2 justify-center relative min-h-1/2screen w-full bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10"> */}
+        <div class="grid h-full w-full grid-cols-8 grid-rows-4 z-50 gap-4">
+            <div class="col-span-4 row-span-4">
+              <FileUploadArea 
+                selectedFile={selectedFile}
+                setSelectedFile={setSelectedFile}
+                handlePostRequest={handlePostRequest}
+                isDragOver={isDragOver}
+                setIsDragOver={setIsDragOver}
+                handleFileRemove={handleFileRemove}
+              />
             </div>
+              <div class="col-span-4 row-span-2 relative flex-auto border border-indigo-600 rounded-lg">
+                <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">{responseText.latex_styled}</p>
+                <CopyToClipboardButton textToCopy = {responseText.latex_styled} textOnButton={"Copy"}></CopyToClipboardButton>
+              </div>
 
 
-            <div class="flex flex-col items-center justify-center relative w-96 h-64 border border-indigo-600 rounded-lg">
-                <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">LaTeX formula preview: </p>
-                <Latex class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">{`$${latexContent}$`}</Latex>
-                <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">{errorMessage}</p>
-          </div>
+              <div class=" col-span-4 row-span-2 flex flex-col flex-auto items-center justify-center relative  border border-indigo-600 rounded-lg">
+                  <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">LaTeX formula preview: </p>
+                  <Latex class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">{`$${latexContent}$`}</Latex>
+                  <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">{errorMessage}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
