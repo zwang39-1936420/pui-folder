@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/pui-folder/final-project/static/css/main.eefa76a6.css",
-    "main.js": "/pui-folder/final-project/static/js/main.5257f45a.js",
-    "static/js/787.0fe84981.chunk.js": "/pui-folder/final-project/static/js/787.0fe84981.chunk.js",
+    "main.css": "/pui-folder/final-project/static/css/main.eb42e68c.css",
+    "main.js": "/pui-folder/final-project/static/js/main.8ac23fd3.js",
+    "static/js/787.c4df67fb.chunk.js": "/pui-folder/final-project/static/js/787.c4df67fb.chunk.js",
     "static/media/KaTeX_AMS-Regular.ttf": "/pui-folder/final-project/static/media/KaTeX_AMS-Regular.853be92419a6c3766b9a.ttf",
     "static/media/KaTeX_Main-Regular.ttf": "/pui-folder/final-project/static/media/KaTeX_Main-Regular.9eba1d77abcf2aa6e94e.ttf",
     "static/media/KaTeX_Main-Bold.ttf": "/pui-folder/final-project/static/media/KaTeX_Main-Bold.8169508bf58f8bd92ad8.ttf",
@@ -64,12 +64,12 @@
     "static/media/KaTeX_Size3-Regular.woff": "/pui-folder/final-project/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/pui-folder/final-project/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/pui-folder/final-project/index.html",
-    "main.eefa76a6.css.map": "/pui-folder/final-project/static/css/main.eefa76a6.css.map",
-    "main.5257f45a.js.map": "/pui-folder/final-project/static/js/main.5257f45a.js.map",
-    "787.0fe84981.chunk.js.map": "/pui-folder/final-project/static/js/787.0fe84981.chunk.js.map"
+    "main.eb42e68c.css.map": "/pui-folder/final-project/static/css/main.eb42e68c.css.map",
+    "main.8ac23fd3.js.map": "/pui-folder/final-project/static/js/main.8ac23fd3.js.map",
+    "787.c4df67fb.chunk.js.map": "/pui-folder/final-project/static/js/787.c4df67fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eefa76a6.css",
-    "static/js/main.5257f45a.js"
+    "static/css/main.eb42e68c.css",
+    "static/js/main.8ac23fd3.js"
   ]
 }
