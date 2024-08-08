@@ -27,7 +27,7 @@ const CopyToClipboardButton = ({ textToCopy, textOnButton, buttonClass }) => {
         aria-label="invisible textarea for copying text"
         readOnly
       />
-      <button className={buttonClass} onClick={handleCopyClick}>{textOnButton}</button>
+      <button class="absolute top-4 right-4 pointer-events-auto rounded-md bg-indigo-600 px-3 py-2 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-indigo-500" onClick={handleCopyClick}>{textOnButton}</button>
 
       {showReminder && (
         <div className='copy-text'>

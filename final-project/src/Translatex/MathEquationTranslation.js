@@ -4,6 +4,7 @@ import LatexCopyButton from './CopyImageToClipboardButton.js';
 import TranslationHistory from './TranslationHistory.js';
 import FileUploadArea from './FileUploadArea';
 import './style.css';
+import '../index.css';
 
 function MathEquationTranslation() {
 
@@ -111,43 +112,49 @@ function MathEquationTranslation() {
 
   
   return (
-    <div className="app-container">
-      <nav className="navbar">
-        <div className="logo">Translatex</div>
-        <div className="nav-links">
-          {/* <button className="documentation-btn">History</button> */}
-          <TranslationHistory 
-            history = {history}
-            setHistory = {setHistory}
-          ></TranslationHistory>
-        </div>
-      </nav>
-
-      <h1>TransLatex, Your Math Career saver</h1>
-      <p id="headline">Upload equations you want to translate into Latex format!</p>
-
-      <div className="main-content">
-        <FileUploadArea 
-          selectedFile={selectedFile}
-          setSelectedFile={setSelectedFile}
-          handlePostRequest={handlePostRequest}
-          isDragOver={isDragOver}
-          setIsDragOver={setIsDragOver}
-          handleFileRemove={handleFileRemove}
-        />
-
-        <div className="output">
-          <div className="text-box-container">
-            <p className='output-text'>{responseText.latex_styled}</p>
-            <CopyToClipboardButton textToCopy = {responseText.latex_styled} buttonClass={"copy-btn"} textOnButton={"Copy"}></CopyToClipboardButton>
-          </div>
-
-          <div className="text-box-container">
-            <div className='latexOutput'>
-                <p>LaTeX formula preview: </p>
-                <Latex>{`$${latexContent}$`}</Latex>
-                <p>{errorMessage}</p>
+    <div class="flex h-full flex-col">
+      <header class="py-10">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <nav class="relative z-50 flex justify-between">
+            <div class="flex items-center md:gap-x-12">Translatex</div>
+            <div class="flex items-center gap-x-5 md:gap-x-8">
+              <TranslationHistory 
+                history = {history}
+                setHistory = {setHistory}
+              ></TranslationHistory>
             </div>
+          </nav>
+        </div>
+      </header>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-20 text-center lg:pt-32">
+        <h1 class="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">TransLatex, Your Math Career saver</h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">Upload equations you want to translate into Latex format!</p>
+      </div>
+
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-20 text-center lg:pt-32">
+        <div class="flex flex-row items-center gap-x-2">
+          <FileUploadArea 
+            selectedFile={selectedFile}
+            setSelectedFile={setSelectedFile}
+            handlePostRequest={handlePostRequest}
+            isDragOver={isDragOver}
+            setIsDragOver={setIsDragOver}
+            handleFileRemove={handleFileRemove}
+          />
+
+          <div class="flex flex-col items-center gap-y-2">
+            <div class="relative w-96 h-64 border border-indigo-600 rounded-lg">
+              <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">{responseText.latex_styled}</p>
+              <CopyToClipboardButton textToCopy = {responseText.latex_styled} buttonClass={"copy-btn"} textOnButton={"Copy"}></CopyToClipboardButton>
+            </div>
+
+
+            <div class="flex flex-col items-center justify-center relative w-96 h-64 border border-indigo-600 rounded-lg">
+                <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">LaTeX formula preview: </p>
+                <Latex class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">{`$${latexContent}$`}</Latex>
+                <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">{errorMessage}</p>
+          </div>
           </div>
         </div>
       </div>
